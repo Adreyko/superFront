@@ -1,7 +1,7 @@
 import { RuleSetRule } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
-export function buildLoaders(options: BuildOptions): RuleSetRule[] {
+export function buildLoaders (options: BuildOptions): RuleSetRule[] {
   const { isDev } = options;
   const SCSSLoader = {
     test: /\.s[ac]ss$/i,
@@ -11,7 +11,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         loader: "css-loader",
         options: {
           modules: {
-            auto: (path: string) => Boolean(path.includes('.module.')),
+            auto: (path: string) => Boolean(path.includes(".module.")),
             localIdentName: isDev ? "[path][name]__[local]--[hash:base64:8]" : "[hash:base64:8]"
           },
         },

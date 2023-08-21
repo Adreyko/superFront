@@ -1,20 +1,32 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "ES2022",
-      "target": "es5",
-      "jsx": "react-jsx",
-      "allowJs": true,
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true
-      
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "checkJs": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
     },
-    "ts-node": {
-        "compilerOptions": {
-          "module": "CommonJS"
-        }
-      }
-  }
-  
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "config",
+    "declarations.d.ts",
+    "src/**/*",
+    ".eslintrc.js",
+    "webpack.config.ts",
+  ],
+}

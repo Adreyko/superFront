@@ -3,6 +3,16 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 export function buildLoaders (options: BuildOptions): RuleSetRule[] {
   const { isDev } = options;
+  const babelLoader = {
+    test: /\.m?(js|ts|tsx|jsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+      },
+    },
+  };
   const SCSSLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -12,7 +22,9 @@ export function buildLoaders (options: BuildOptions): RuleSetRule[] {
         options: {
           modules: {
             auto: (path: string) => Boolean(path.includes(".module.")),
-            localIdentName: isDev ? "[path][name]__[local]--[hash:base64:8]" : "[hash:base64:8]"
+            localIdentName: isDev
+              ? "[path][name]__[local]--[hash:base64:8]"
+              : "[hash:base64:8]",
           },
         },
       },
@@ -24,5 +36,5 @@ export function buildLoaders (options: BuildOptions): RuleSetRule[] {
     use: "ts-loader",
     exclude: /node_modules/,
   };
-  return [TSLoader, SCSSLoader];
+  return [babelLoader, TSLoader, SCSSLoader];
 }

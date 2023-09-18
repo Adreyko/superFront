@@ -7,3 +7,9 @@
     border: none;
     outline: none;
 }
+
+.outlined {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}

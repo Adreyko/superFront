@@ -28,5 +28,6 @@
     "src/**/*",
     ".eslintrc.js",
     "webpack.config.ts",
+    "./config/jest/setupTest.ts"
   ],
 }

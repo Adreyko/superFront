@@ -23,7 +23,12 @@ export function buildPlugins ({
     }),
   ];
   if (isDev) {
-    plugins.push(new BundleAnalyzerPlugin(), new ReactRefreshWebpackPlugin());
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }),
+      new ReactRefreshWebpackPlugin()
+    );
   }
   return plugins;
 }

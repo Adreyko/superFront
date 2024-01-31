@@ -1,10 +1,10 @@
-import BugButton from "app/providers/BoudaryError/ui/BugButton";
+import Counter from "entities/Counter/ui/Counter";
 import { useTranslation } from "react-i18next";
 const MainPage = () => {
   const { t } = useTranslation("main");
   return (
     <div>
-      <BugButton />
+      <Counter/>
       {t("Main")}
     </div>
   );

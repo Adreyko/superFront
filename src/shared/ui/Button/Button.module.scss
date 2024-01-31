@@ -13,3 +13,10 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
 }
+
+.filled {
+    padding: 10px;
+    border: none;
+    background-color: var(--inverted-bg-color);
+    color: var(--primary-color);
+}

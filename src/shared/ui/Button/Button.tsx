@@ -5,6 +5,7 @@ import "./../../../app/styles/index.scss"
 export enum ThemeButton {
   CLEAR = "clear",
   OUTLINED = "outlined",
+  FILLED = "filled"
 }
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string

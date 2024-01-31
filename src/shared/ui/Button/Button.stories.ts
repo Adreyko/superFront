@@ -26,6 +26,7 @@ export const Primary: Story = {
   },
 };
 Primary.decorators = [ThemeDecorator(Theme.LIGHT)]
+
 export const Clear: Story = {
   args: {
     children: "Clear",
@@ -37,6 +38,14 @@ export const Outlined: Story = {
   args: {
     children: "Outlined",
     theme: ThemeButton.OUTLINED,
+  },
+};
+Outlined.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Filled: Story = {
+  args: {
+    children: "Filled",
+    theme: ThemeButton.FILLED,
   },
 };
 Outlined.decorators = [ThemeDecorator(Theme.DARK)]

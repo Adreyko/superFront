@@ -1,7 +1,7 @@
 .sidebar{
   min-height: calc(100vh - var(--nav-bar-height));  
   width: var(--sidebar-width);
-  background: var(---inverted-bg-color);
+  background: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s;
 }
@@ -9,4 +9,18 @@
 
 .collapsed {
     width:  var(--sidebar-width-collapsed);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0px;
+
+}
+
+.contentClosed {
+    visibility: hidden;
 }

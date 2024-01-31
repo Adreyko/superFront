@@ -1,13 +1,14 @@
 .navbar {
     width: 100%;
     height: var(--nav-bar-height);
-    background: var(---inverted-bg-color);
+    background: var(--inverted-bg-color);
     display: flex;
     justify-content: flex-end;
     padding: 20px;
+    height: fit-content;
+    align-items: center;
 }
 
 .main {
     margin-right: 15px;
 }
-

@@ -25,7 +25,7 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-  plugins: ["react"],
+  plugins: ["react", "react-hooks"],
   rules: {
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -60,6 +60,8 @@ module.exports = {
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
-    "@typescript-eslint/no-floating-promises": "off"
+    "@typescript-eslint/no-floating-promises": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
   },
 };

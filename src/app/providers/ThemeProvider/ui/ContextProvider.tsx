@@ -4,13 +4,12 @@ interface BaseLayoutProps {
   children?: ReactNode
 }
 
-const defaultThemeValue = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as
-  | Theme
-  | Theme.LIGHT;
+const defaultThemeValue = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 const ThemeProvider: FunctionComponent<BaseLayoutProps> = ({
   children,
 }) => {
   const [theme, setTheme] = useState<Theme>(defaultThemeValue);
+
   const defaultProps = useMemo(
     () => ({
       theme,

@@ -3,13 +3,17 @@
       "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "ESNext",
-      "target": "es5",
-      "jsx": "react-jsx",
+      "target": "ES6",
       "allowJs": true,
+      "esModuleInterop": true,
+      "jsx": "react-jsx",
+      "allowSyntheticDefaultImports": true,
+      "isolatedModules": true,
       "moduleResolution": "node",
       "baseUrl": ".",
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true,
+      "paths": {
+      "*": ["./src/*"]
+    },
     
     },
     "ts-node": {

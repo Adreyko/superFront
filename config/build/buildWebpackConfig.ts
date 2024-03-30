@@ -3,7 +3,7 @@ import { BuildOptions } from './types/config';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildPlugins } from './buildPlugins';
-import { buildDevServer } from './types/buildDevServer';
+import { buildDevServer } from './buildDevServer';
 export default  function buildWebpackConfig (options : BuildOptions) : webpack.Configuration {
     const {paths, mode, isDev} = options
 return {
@@ -13,7 +13,7 @@ return {
       rules:buildLoaders(isDev)
     },
     devtool: isDev ?  'inline-source-map' : undefined,
-    resolve:buildResolvers(),
+    resolve:buildResolvers(options),
     output: {
       filename:'[name].[contenthash].js',
       path:paths.build,

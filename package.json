@@ -8,7 +8,10 @@
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
     "lint:ts": " eslint \"**/*.{ts,tsx,js,jsx}\"",
-    "lint:ts:fix": " eslint \"**/*.{ts,tsx,js,jsx}\" --fix"
+    "lint:ts:fix": " eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
+    "lint:scss": " eslint \"**/*.{ts,tsx,js,jsx}\"",
+    "lint:scss:fix": " eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
+    "test:unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",

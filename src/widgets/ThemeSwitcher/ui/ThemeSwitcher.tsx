@@ -16,6 +16,8 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     <Button
       theme="clear"
       onClick={toggleTheme}
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       className={clsx(cls.themeSwitcher, {}, [className])}
     >
       {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />}

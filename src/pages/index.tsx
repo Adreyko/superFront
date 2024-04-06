@@ -1,2 +1,2 @@
-export  { Main } from "./Main/MainAsync";
-export { About } from './About/AboutAsync'
+export { Main } from './Main/MainAsync';
+export { About } from './About/AboutAsync';

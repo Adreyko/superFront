@@ -1,8 +1,7 @@
-
+import { useTranslation } from 'react-i18next';
 const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+  const { t } = useTranslation();
+  return <div>{t('main')}</div>;
+};
 
-export default Main
+export default Main;

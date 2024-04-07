@@ -1,5 +1,5 @@
 import { BuildPaths } from './../build/types/config';
-import webpack, { RuleSetRule, ModuleOptions, DefinePlugin } from 'webpack';
+import webpack, { RuleSetRule, DefinePlugin } from 'webpack';
 import path from 'path';
 
 type RuleType = undefined | null | false | '' | 0 | RuleSetRule | '...';
@@ -15,7 +15,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
-  config!.resolve!.alias = {
+  config.resolve.alias = {
     ...config.resolve?.alias,
     '@': paths.src,
   };
@@ -37,8 +37,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
     ],
   });
 
-  
-
   // eslint-disable-next-line no-param-reassign
   if (config?.module?.rules) {
     config.module.rules = config?.module?.rules?.map((rule: RuleType) => {
@@ -46,7 +44,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
       if (!newRule) {
         return newRule;
       }
-      if (/svg/.test(newRule.test as string)) {
+      if ((newRule.test as string).includes('svg')) {
         return { ...newRule, exclude: /\.svg$/i };
       }
 

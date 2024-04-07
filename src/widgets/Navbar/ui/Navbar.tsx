@@ -7,8 +7,6 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-
-
   return (
     <div className={clsx(cls.navbar, {}, [className])}>
         none

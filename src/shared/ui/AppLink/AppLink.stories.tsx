@@ -4,11 +4,11 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 const meta: Meta<typeof AppLink> = {
-    title:'shared/AppLink',
+    title: 'shared/AppLink',
   component: AppLink,
-  decorators :[],
-  args :{
-    to: "/"
+  decorators: [],
+  args: {
+    to: '/'
   }
 
 };
@@ -18,16 +18,16 @@ type Story = StoryObj<typeof AppLink>;
 
 export const Primary: Story = {
   args: {
-    theme:'primary',
+    theme: 'primary',
     children: 'Link',
 
   },
- 
+
 };
 
 export const Secondary: Story = {
   args: {
-    theme:'secondary',
+    theme: 'secondary',
     children: 'Link',
 
   },
@@ -36,18 +36,18 @@ export const Secondary: Story = {
 
 export const PrimaryDark: Story = {
     args: {
-      theme:'primary',
+      theme: 'primary',
       children: 'Link',
 
     },
-    decorators:[ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)]
   };
-  
+
 export const SecondaryDark: Story = {
     args: {
-        theme:'secondary',
+        theme: 'secondary',
       children: 'Link',
 
     },
-  decorators:[ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)]
   };

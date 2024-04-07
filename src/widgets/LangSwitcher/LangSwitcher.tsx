@@ -5,15 +5,15 @@ import cls from './LangSwitcher.module.scss'
 
 interface LangSwitcherProps {
   className?: string;
-  variant? : 'short' | 'full'
+  variant?: 'short' | 'full'
 }
 
-const fullLanguage : Record<string, string> ={
-  en : 'English',
-  ua : 'Ukrainian'
+const fullLanguage: Record<string, string> = {
+  en: 'English',
+  ua: 'Ukrainian'
 }
 
-export const LangSwitcher = ({ className,variant }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, variant }: LangSwitcherProps) => {
   const language = i18n.language;
   return (
     <Button
@@ -22,7 +22,7 @@ export const LangSwitcher = ({ className,variant }: LangSwitcherProps) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       className={clsx(cls.langSwitcher, {}, [className])}
     >
-      {variant ==='short' ? language : fullLanguage[language]}
+      {variant === 'short' ? language : fullLanguage[language]}
     </Button>
   );
 };

@@ -6,7 +6,7 @@ import './../../../app/styles/index.scss'
 export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) =>
 
   (
-    <div id="app" style={{ width:'100vw',display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }} className={`app ${theme}`}>
+    <div id="app" style={{ width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }} className={`app ${theme}`}>
       <Story />
     </div>
   );

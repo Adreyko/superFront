@@ -29,21 +29,21 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <div className={clsx(cls.links)}>
         <AppLink theme={path.pathname === '/' ? 'primary' : 'secondary'} to="/">
           <HomeIcon className={cls.icon}/>
-         <span className={cls.linkText}>{t('main')}</span> 
+         <span className={cls.linkText}>{t('main')}</span>
         </AppLink>
         <AppLink
           theme={path.pathname === '/about' ? 'primary' : 'secondary'}
           to="/about"
         >
           <AboutIcon className={cls.icon}/>
-         <span className={cls.linkText}> {t2('about')}</span> 
+         <span className={cls.linkText}> {t2('about')}</span>
         </AppLink>
 
       </div>
       <Button theme='secondaryInverted' className={cls.collapsedBtn} onClick={toggleCollapse}>{collapsed ? '<' : '>'}</Button>
       <div className={cls.switcher}>
-        <LangSwitcher variant={collapsed ?  'short' : 'full' } />
-        <ThemeSwitcher  />
+        <LangSwitcher variant={collapsed ? 'short' : 'full' } />
+        <ThemeSwitcher />
       </div>
 
     </div>

@@ -9,7 +9,6 @@ export function buildPlugins({
   html: string;
   isDev: boolean;
 }): webpack.WebpackPluginInstance[] {
-
   const plugins = [
     new HtmlWebpackPlugin({
       template: html,
@@ -24,14 +23,13 @@ export function buildPlugins({
     }),
 
   ];
-  if(isDev){
+  if (isDev) {
     plugins.push(
       new BundleAnalyzerPlugin({ openAnalyzer: false })
     )
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
     )
-
   }
   return plugins
 }

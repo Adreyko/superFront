@@ -5,9 +5,9 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 const meta: Meta<typeof Navbar> = {
-  title:'widgets/Navbar',
+  title: 'widgets/Navbar',
   component: Navbar,
-  decorators :[]
+  decorators: []
 
 };
 

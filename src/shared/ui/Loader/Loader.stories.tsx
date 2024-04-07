@@ -5,9 +5,9 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 const meta: Meta<typeof Loader> = {
-  title:'shared/Loader',
+  title: 'shared/Loader',
   component: Loader,
-  decorators :[]
+  decorators: []
 
 };
 

@@ -5,19 +5,21 @@ import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: ReactNode;
-  theme?: 'clear';
+  theme?: 'clear' | "primary" | 'primaryInverted' | 'secondary' | "secondaryInverted";
+  size?:'normal' | 'xl' | 'large'
 }
 
 export const Button: FC<ButtonProps> = ({
   className,
   children,
   theme,
+  size = 'normal',
   ...props
 }: ButtonProps) => {
   return (
     <button
       {...props}
-      className={clsx(cls.button, {}, [className, cls[theme]])}
+      className={clsx(cls.button, {}, [className, cls[theme], cls[size]])}
     >
       {children}
     </button>

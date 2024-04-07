@@ -18,7 +18,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={clsx(cls.navbar, {}, [className])}>
       <div className={clsx(cls.links)}>
-        <AppLink theme={path.pathname === '/' ? 'primary' : 'primary'} to="/">
+        <AppLink theme={path.pathname === '/' ? 'secondary' : 'primary'} to="/">
           {t('main')}
         </AppLink>
         <AppLink

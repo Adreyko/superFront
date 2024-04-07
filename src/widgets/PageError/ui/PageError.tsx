@@ -14,6 +14,7 @@ export const PageError = ({ className }: PageErrorProps) => {
         location.reload()
     }
   return (
+       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
        <div className={clsx(cls.pageError, {}, [className])}>
            {/* Something went wrong, please reload page! */}
            {t('page_error')}

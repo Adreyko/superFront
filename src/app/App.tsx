@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import { useTheme } from './providers/ThemeProvider';
 import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import { AppRouter } from './providers/router';
@@ -11,12 +10,12 @@ const App = () => {
   const { theme } = useTheme();
 
   return (
-    <Suspense fallback={<PageLoader/>}>
+    <Suspense fallback={<PageLoader />}>
       <div className={clsx('app', {}, [theme])}>
         <Navbar />
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
-          <div className="page-wrapper">
+          <div className='page-wrapper'>
             <AppRouter />
           </div>
         </div>

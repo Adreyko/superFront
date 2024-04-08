@@ -10,7 +10,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     html: '',
     src: path.resolve(__dirname, '../', '../', 'src'),
-
   };
 
   config.resolve?.modules?.push(paths.src);
@@ -44,9 +43,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
       if (!newRule) {
         return newRule;
       }
-      if ((newRule.test as string).includes('svg')) {
-        return { ...newRule, exclude: /\.svg$/i };
-      }
+      // if ((newRule.test as string).includes('svg')) {
+      //   return { ...newRule, exclude: /\.svg$/i };
+      // }
 
       return newRule;
     });
@@ -61,7 +60,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __PROJECT__: JSON.stringify('storybook'),
-    }),
+    })
   );
 
   return config;

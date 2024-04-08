@@ -1,6 +1,7 @@
 {
   "main": "Main",
-  "not_found" : "Page not found",
+  "not_found": "Page not found",
   "page_error": "Oops... Something went wrong, please reload the page!",
-  "reload" : "Reload"
+  "reload": "Reload",
+  "login": "Login"
 }

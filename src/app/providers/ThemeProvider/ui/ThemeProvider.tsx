@@ -14,13 +14,14 @@ import {
 
 interface BaseLayoutProps {
   children?: ReactNode;
+  initialTheme?: Theme;
 }
 
 const defaultThemeValue =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-const ThemeProvider: FC<BaseLayoutProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(defaultThemeValue);
+const ThemeProvider: FC<BaseLayoutProps> = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState<Theme>(initialTheme || defaultThemeValue);
   const themeProps = useMemo(() => ({ theme, setTheme }), [theme]);
 
   return (

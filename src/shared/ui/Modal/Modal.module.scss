@@ -1,0 +1,52 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: var(--modal-index);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    z-index: var(--overlay-index);
+    background: var(--overlay-bg);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.content {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--content-bg-color);
+    transform: scale(0.5);
+    max-width: 60%;
+    transition: 0.3s transform ease-in-out;
+    color: var();
+}
+
+.opened {
+    opacity: 1;
+    pointer-events: auto;
+
+    .content {
+        transform: scale(1);
+    }
+
+}
+
+.closing {
+    .content {
+        transform: scale(0);
+    }
+
+}

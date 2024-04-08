@@ -2,6 +2,7 @@
 import React, {
   FC,
   InputHTMLAttributes,
+  SyntheticEvent,
   memo,
   useEffect,
   useRef,
@@ -64,8 +65,9 @@ const Input: FC<InputProps> = memo((props: InputProps) => {
     setIsFocused(true);
   };
 
-  const onSelect = (e: any) => {
-    setCaretPosition(e?.target?.selectionStart || 0);
+  const onSelect = (e: SyntheticEvent<HTMLDivElement, Event>) => {
+    const target = e.target as HTMLInputElement;
+    setCaretPosition(target.selectionStart || 0);
   };
 
   return (

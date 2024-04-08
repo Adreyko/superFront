@@ -14,7 +14,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6010 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "start:dev:server": "node ./json-server/index.js"
+    "start:dev:server": "node ./json-server/index.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",

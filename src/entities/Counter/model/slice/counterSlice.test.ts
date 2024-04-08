@@ -1,5 +1,3 @@
-/* eslint-disable prod-proj-plugin/public-api-imports */
-
 import { CountSchema } from '../types/counterSchema';
 import { counterReducer, counterActions } from './counterSlice';
 

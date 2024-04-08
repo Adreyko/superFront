@@ -5,6 +5,7 @@ import ThemeProvider from './app/providers/ThemeProvider/ui/ThemeProvider';
 import './shared/config/i18n/i18n';
 import ErrorBoundary from 'app/providers/ErrorBoundary/ui/ErrorBoundary';
 import './app/styles/index.scss';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const container = document.getElementById('root');
 if (!container) {
@@ -14,11 +15,13 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-  <ThemeProvider>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </BrowserRouter>
-  </ThemeProvider>
+  <StoreProvider>
+    <ThemeProvider>
+      <BrowserRouter>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </BrowserRouter>
+    </ThemeProvider>
+  </StoreProvider>
 );

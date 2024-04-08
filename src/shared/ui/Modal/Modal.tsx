@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import cls from './Modal.module.scss';
 import {

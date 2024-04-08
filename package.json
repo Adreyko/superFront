@@ -13,7 +13,8 @@
     "lint:scss:fix": " eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6010 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "start:dev:server": "node ./json-server/index.js"
   },
   "keywords": [],
   "author": "",

@@ -3,5 +3,7 @@
   "not_found": "Page not found",
   "page_error": "Oops... Something went wrong, please reload the page!",
   "reload": "Reload",
-  "login": "Login"
+  "login": "Login",
+  "loginError": "Wrong login or password!",
+  "logout": "Logout"
 }

@@ -1,32 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Input from './Input';
+import Text from './Text';
 
 const meta = {
-  title: 'shared/Input',
-  component: Input,
+  title: 'shared/Text',
+  component: Text,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta<typeof Input>;
+} as Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    placeholder: 'Type text',
-    value: 'value',
+    text: 'lorem lroemwmdsmdads',
+    title: 'title lorem asas',
   },
 };
 
-export const Dark: Story = {
+export const OnlyTitle: Story = {
   args: {
-    placeholder: 'Type text',
-    value: 'value',
+    title: 'title',
+  },
+};
+
+export const OnlyText: Story = {
+  args: {
+    text: 'text',
   },
 };

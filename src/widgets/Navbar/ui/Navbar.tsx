@@ -42,7 +42,9 @@ export const Navbar = ({ className }: NavbarProps) => {
       <Button className={cls.loginBtn} theme='primary' onClick={onToggleModal}>
         {t('login')}
       </Button>
-      <LoginModal isOpen={authModalOpened} onClose={onToggleModal} />
+      {authModalOpened && (
+        <LoginModal isOpen={authModalOpened} onClose={onToggleModal} />
+      )}
     </div>
   );
 };

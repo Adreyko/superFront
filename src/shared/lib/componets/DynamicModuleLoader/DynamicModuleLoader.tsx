@@ -29,17 +29,17 @@ export const DynamicModuleLoader = ({
   useEffect(() => {
     const mountedReducers = store.reducerManager.getReducerMap();
     Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-      const mounted = mountedReducers[name as StateSchemaKey];
+      const mounted = mountedReducers[name];
       if (!mounted) {
-        store.reducerManager.add(name as StateSchemaKey, reducer);
+        store.reducerManager.add(name, reducer);
         dispatch({ type: `@INIT ${name} reducer` });
       }
     });
 
     return () => {
       if (removeAfterUnmount) {
-        Object.keys(reducers).forEach((name: string) => {
-          store.reducerManager.remove(name as StateSchemaKey);
+        Object.keys(reducers).forEach((name: StateSchemaKey) => {
+          store.reducerManager.remove(name);
           dispatch({ type: `@DESTROY ${name} reducer` });
         });
       }

@@ -1,0 +1,15 @@
+.icon {
+    fill: var(--inverted-primary-color);
+    margin-right: 15px;
+}
+
+
+.collapsed {
+    .linkText {
+        opacity: 0;
+        transition: 0.5s opacity;
+        width: 0;
+        height: 0;
+        display: block;
+    }
+}

@@ -19,6 +19,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   const authData = useSelector(getAuthData);
   const dispatch = useAppDispatch();
+
   const onToggleModal = useCallback(() => {
     setAuthModalOpened((prev) => !prev);
   }, []);

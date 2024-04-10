@@ -17,16 +17,18 @@ import { loginByUsername } from 'features/AuthByUsername/model/services/loginByU
 import Button from 'shared/ui/Button/Button';
 import Text from 'shared/ui/Text/Text';
 import DynamicModuleLoader from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+
 export interface LoginFormProps {
   className?: string;
   children?: ReactNode;
+  onSuccess?: () => void;
 }
 
 const initialReducer = {
   loginSchema: loginReducer,
 };
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+export const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -49,9 +51,13 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispatch]
   );
 
-  const onLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    const successReq = result.meta.requestStatus === 'fulfilled';
+    if (successReq) {
+      onSuccess();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount={true} reducers={initialReducer}>

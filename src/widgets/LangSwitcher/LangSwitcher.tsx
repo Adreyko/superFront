@@ -1,30 +1,37 @@
 import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import Button from 'shared/ui/Button/Button';
 import i18n from 'shared/config/i18n/i18n';
-import cls from './LangSwitcher.module.scss'
+import cls from './LangSwitcher.module.scss';
+import { memo } from 'react';
 
 interface LangSwitcherProps {
   className?: string;
-  variant?: 'short' | 'full'
+  variant?: 'short' | 'full';
 }
 
 const fullLanguage: Record<string, string> = {
   en: 'English',
-  ua: 'Ukrainian'
-}
-
-export const LangSwitcher = ({ className, variant }: LangSwitcherProps) => {
-  const language = i18n.language;
-  return (
-    <Button
-      theme='primary'
-      onClick={async () => await i18n.changeLanguage(language === 'en' ? 'ua' : 'en')}
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      className={clsx(cls.langSwitcher, {}, [className])}
-    >
-      {variant === 'short' ? language : fullLanguage[language]}
-    </Button>
-  );
+  ua: 'Ukrainian',
 };
+
+export const LangSwitcher = memo(
+  ({ className, variant }: LangSwitcherProps) => {
+    const language = i18n.language;
+    return (
+      <Button
+        theme='primary'
+        onClick={async () =>
+          await i18n.changeLanguage(language === 'en' ? 'ua' : 'en')
+        }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        className={clsx(cls.langSwitcher, {}, [className])}
+      >
+        {variant === 'short' ? language : fullLanguage[language]}
+      </Button>
+    );
+  }
+);
+
+LangSwitcher.displayName = 'LangSwitcher';
 
 export default LangSwitcher;

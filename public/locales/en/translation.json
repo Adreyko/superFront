@@ -5,5 +5,7 @@
   "reload": "Reload",
   "login": "Login",
   "loginError": "Wrong login or password!",
-  "logout": "Logout"
+  "logout": "Logout",
+  "profile": "Profile",
+  "about": "About"
 }

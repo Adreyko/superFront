@@ -9,7 +9,6 @@ interface LoginByUsernameProps {
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
   'login/loginByUsername',
   async (loginData, thunkAPI) => {
-    console.log(loginData);
     try {
       const response = await axios.post(
         'http://localhost:8000/login',

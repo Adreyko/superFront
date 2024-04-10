@@ -1,3 +1,4 @@
+import { ProfileSchema } from './../../../../entities/Profile/model/types/profile';
 import {
   AnyAction,
   CombinedState,
@@ -15,6 +16,7 @@ export interface StateSchema {
 
   // async reducers
   loginSchema?: LoginSchema;
+  profileSchema?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

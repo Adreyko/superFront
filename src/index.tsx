@@ -15,13 +15,13 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-  <StoreProvider>
-    <ThemeProvider>
-      <BrowserRouter>
+  <ThemeProvider>
+    <BrowserRouter>
+      <StoreProvider>
         <ErrorBoundary>
           <App />
         </ErrorBoundary>
-      </BrowserRouter>
-    </ThemeProvider>
-  </StoreProvider>
+      </StoreProvider>
+    </BrowserRouter>
+  </ThemeProvider>
 );

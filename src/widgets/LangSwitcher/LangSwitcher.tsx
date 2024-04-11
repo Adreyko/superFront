@@ -1,8 +1,8 @@
 import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import Button from 'shared/ui/Button/Button';
-import i18n from 'shared/config/i18n/i18n';
 import cls from './LangSwitcher.module.scss';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface LangSwitcherProps {
   className?: string;
@@ -16,17 +16,18 @@ const fullLanguage: Record<string, string> = {
 
 export const LangSwitcher = memo(
   ({ className, variant }: LangSwitcherProps) => {
-    const language = i18n.language;
+    const { i18n } = useTranslation();
+
     return (
       <Button
         theme='primary'
         onClick={async () =>
-          await i18n.changeLanguage(language === 'en' ? 'ua' : 'en')
+          await i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en')
         }
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className={clsx(cls.langSwitcher, {}, [className])}
       >
-        {variant === 'short' ? language : fullLanguage[language]}
+        {variant === 'short' ? i18n.language : fullLanguage[i18n.language]}
       </Button>
     );
   }

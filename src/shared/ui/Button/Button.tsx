@@ -10,7 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'primary'
     | 'primaryInverted'
     | 'secondary'
-    | 'secondaryInverted';
+    | 'secondaryInverted'
+    | 'warning';
   size?: 'normal' | 'xl' | 'large';
   disabled?: boolean;
 }
@@ -27,9 +28,10 @@ export const Button: FC<ButtonProps> = ({
     <button
       disabled={disabled}
       {...props}
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       className={clsx(cls.button, { [cls.disabled]: disabled }, [
         className,
-        cls[theme],
+        cls[theme ?? 'clear'],
         cls[size],
       ])}
     >

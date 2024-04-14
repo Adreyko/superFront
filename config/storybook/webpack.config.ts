@@ -14,10 +14,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
-  config.resolve.alias = {
-    ...config.resolve?.alias,
-    '@': paths.src,
-  };
 
   config?.module?.rules?.push({
     test: /\.s[ac]ss$/i,
@@ -43,9 +39,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
       if (!newRule) {
         return newRule;
       }
-      // if ((newRule.test as string).includes('svg')) {
-      //   return { ...newRule, exclude: /\.svg$/i };
-      // }
+      if ((newRule.test as string).includes('svg')) {
+        return { ...newRule, exclude: /\.svg$/i };
+      }
 
       return newRule;
     });
@@ -60,6 +56,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __PROJECT__: JSON.stringify('storybook'),
+      __API__: JSON.stringify('https://fakestoreapi.com'),
     })
   );
 

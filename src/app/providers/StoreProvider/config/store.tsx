@@ -1,10 +1,12 @@
 import {
   AnyAction,
+  CombinedState,
+  Reducer,
   ReducersMapObject,
   ThunkMiddleware,
   configureStore,
 } from '@reduxjs/toolkit';
-import { StateSchema } from './StateSchema';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { counterReducer } from 'entities/Counter/model/slice/counterSlice';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManagaer';
@@ -24,17 +26,19 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
+  const extraArg: ThunkExtraArg = {
+    api,
+    navigate,
+  };
+
   const store = configureStore<StateSchema>({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
     devTools: __IS_DEV__,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         thunk: {
-          extraArgument: {
-            api,
-            navigate,
-          },
+          extraArgument: extraArg,
         },
       }) as unknown as [ThunkMiddleware<StateSchema, AnyAction, undefined>],
   });

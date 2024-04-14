@@ -6,6 +6,8 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher/LangSwitcher';
 import { sidebarItemsList } from '../model/items';
 import SidebarItems from './SidebarItems/SidebarItems';
+import { getAuthData } from 'entities/User';
+import { useSelector } from 'react-redux';
 interface SidebarProps {
   className?: string;
 }
@@ -15,13 +17,15 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const toggleCollapse = () => {
     setCollapsed((prev) => !prev);
   };
-
+  const isAuth = useSelector(getAuthData);
   const sidebarItems = useMemo(
     () =>
-      sidebarItemsList.map((item) => (
-        <SidebarItems collapsed={collapsed} key={item.path} items={item} />
-      )),
-    [collapsed]
+      sidebarItemsList
+        .filter((item) => (item.authOnly ? isAuth : true))
+        .map((item) => (
+          <SidebarItems collapsed={collapsed} key={item.path} items={item} />
+        )),
+    [collapsed, isAuth]
   );
 
   return (

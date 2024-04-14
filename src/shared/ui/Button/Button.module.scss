@@ -14,7 +14,7 @@
 }
 
 .primary {
-    background-color: var(--bg-color);
+    background-color: var(--inverted-primary-color);
     outline: none;
     color: var(--primary-color);
 }
@@ -28,6 +28,11 @@
 .secondary {
     background-color: var(--bg-color);
     outline: none;
+    color: var(--secondary-color);
+}
+
+.warning {
+    background-color: var(--red-light);
     color: var(--secondary-color);
 }
 

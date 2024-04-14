@@ -7,16 +7,25 @@ interface TextProps {
   title?: string;
   text?: string;
   theme?: 'primary' | 'error';
+  textAlign?: 'right' | 'left' | 'center';
 }
 
-const Text: FC<TextProps> = memo(({ title, theme, text }: TextProps) => {
-  return (
-    <div className={clsx(cls.text, {}, [cls[theme]])}>
-      {title && <p className={cls.title}>{title}</p>}
-      {text && <p className={cls.text}>{text}</p>}
-    </div>
-  );
-});
+const Text: FC<TextProps> = memo(
+  ({ title, theme, text, textAlign = 'left' }: TextProps) => {
+    return (
+      <div
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        className={clsx(cls.text, {}, [
+          cls[theme ?? 'primary'],
+          cls[textAlign],
+        ])}
+      >
+        {title && <p className={cls.title}>{title}</p>}
+        {text && <p className={cls.text}>{text}</p>}
+      </div>
+    );
+  }
+);
 
 Text.displayName = 'Text';
 

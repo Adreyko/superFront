@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.btnContainer {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    border: 1px solid var(--inverted-bg-color);
+}
+
+.editBtn {
+    border: 1px solid var(--inverted-bg-color);
+    margin-left: auto;
+}

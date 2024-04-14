@@ -1,0 +1,31 @@
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile {
+    padding: 20px;
+    border: 2px solid var(--inverted-bg-color);
+
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.imageContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}

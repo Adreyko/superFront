@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { Mods, clsx } from 'shared/lib/helpers/clsx/clsx';
 import cls from './Modal.module.scss';
 import {
   ReactNode,
@@ -28,11 +28,11 @@ export const Modal = ({
   onClose,
 }: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
-  const timeRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const timeRef = useRef<ReturnType<typeof setTimeout> | undefined>();
   const [isMounted, setIsMounted] = useState(false);
   const { theme } = useTheme();
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };

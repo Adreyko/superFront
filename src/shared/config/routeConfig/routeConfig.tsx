@@ -2,7 +2,7 @@ import { About, Main, ProfilePage } from 'pages';
 import { NotFound } from 'pages/NotFound';
 import { RouteProps } from 'react-router-dom';
 
-type AppRouterProps = RouteProps & {
+export type AppRouterProps = RouteProps & {
   authOnly?: boolean;
 };
 

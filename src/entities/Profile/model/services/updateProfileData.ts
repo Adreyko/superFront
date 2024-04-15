@@ -1,18 +1,25 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile } from '../types/profile';
+import { Profile, ProfileValidateError } from '../types/profile';
 import { getProfileForm } from '../selectors/getProfileForm';
 import { api } from 'shared/api/api';
+import { validateProfile } from './validatedProfile/validateProfile';
 
 export const updateProfileData = createAsyncThunk<
   Profile,
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
   void,
-  ThunkConfig<string>
+  ThunkConfig<ProfileValidateError[]>
 >(
   'profile/updateProfileData',
   async (_, { dispatch, extra, rejectWithValue, getState }) => {
     const updatedData = getProfileForm(getState());
+
+    const errors = validateProfile(updatedData);
+
+    if (errors.length) {
+      return rejectWithValue(errors);
+    }
     try {
       const response = await api.put<Profile>('/profile', updatedData);
 
@@ -22,7 +29,7 @@ export const updateProfileData = createAsyncThunk<
 
       return response.data;
     } catch (error) {
-      return rejectWithValue('error');
+      return rejectWithValue([ProfileValidateError.NO_DATA]);
     }
   }
 );

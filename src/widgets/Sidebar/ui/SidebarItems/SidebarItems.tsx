@@ -14,7 +14,7 @@ export const SidebarItems = memo(({ items, collapsed }: SidebarItemsProps) => {
   const { t } = useTranslation();
   const location = useLocation();
 
-  const { path, text, Icon, authOnly } = items;
+  const { path, text, Icon } = items;
   return (
     <AppLink
       className={clsx('', { [cls.collapsed]: collapsed }, [cls])}

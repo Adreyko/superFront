@@ -6,6 +6,7 @@ import {
   profileReducer,
   Profile as PROF,
   profileActions,
+  gerProfileErrors,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useCallback, useEffect } from 'react';
@@ -21,6 +22,7 @@ import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileR
 
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
+import Text from 'shared/ui/Text/Text';
 
 interface ProfilePageProps {
   className?: string;
@@ -36,6 +38,8 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+
+  const validateErrors = useSelector(gerProfileErrors);
 
   useEffect(() => {
     dispatch(
@@ -114,6 +118,9 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     <DynamicModuleLoader reducers={initialReducer}>
       <div className={clsx(cls, {}, [className])}>
         <ProfilePageHeader readonly={readonly} />
+        {validateErrors?.map((error) => (
+          <Text key={error} title={error} theme='error' />
+        ))}
         <ProfileCard
           readonly={readonly}
           data={form}

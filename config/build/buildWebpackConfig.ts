@@ -20,6 +20,7 @@ export default function buildWebpackConfig(
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
+      publicPath: '/',
     },
     devServer: isDev ? buildDevServer(options) : undefined,
     plugins: buildPlugins({ isDev, html: paths.html, apiUrl }),

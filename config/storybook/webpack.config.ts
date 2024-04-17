@@ -39,9 +39,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
       if (!newRule) {
         return newRule;
       }
-      if ((newRule.test as string).includes('svg')) {
-        return { ...newRule, exclude: /\.svg$/i };
-      }
+      // if ((newRule.test as string).includes('svg')) {
+      //   return { ...newRule, exclude: /\.svg$/i };
+      // }
 
       return newRule;
     });

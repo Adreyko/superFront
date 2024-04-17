@@ -1,10 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: [
-    '../../src/**/*.mdx',
-    '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
+  stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     {
@@ -16,8 +13,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     'storybook-addon-mock',
-    'storybook-addon-themes'
-
+    'storybook-addon-themes',
   ],
   framework: {
     name: '@storybook/react-webpack5',

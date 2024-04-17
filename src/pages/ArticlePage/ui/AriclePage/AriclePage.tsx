@@ -7,8 +7,8 @@ interface AriclePageProps {
   className?: string;
 }
 
-export const AriclePage = ({ className }: AriclePageProps) => {
-  return <div className={clsx(cls, {}, [className])}>AriclePage</div>;
+export const ArticlePage = ({ className }: AriclePageProps) => {
+  return <div className={clsx(cls, {}, [className])}>article page</div>;
 };
 
-export default memo(AriclePage);
+export default memo(ArticlePage);

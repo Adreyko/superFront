@@ -1,3 +1,27 @@
 .articleDatils {
     height: 100%;
 }
+
+.articleInfo {
+    display: flex;
+}
+
+.avatarWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.articleInfo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.blockWrapper {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}

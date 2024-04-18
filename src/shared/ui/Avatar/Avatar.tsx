@@ -3,9 +3,9 @@ import { clsx } from 'shared/lib/helpers/clsx/clsx';
 
 interface AvatarProps {
   className?: string;
-  src: string;
-  alt: string;
-  size: string;
+  src?: string;
+  alt?: string;
+  size?: string | number;
 }
 
 export const Avatar = ({ className, src, alt, size }: AvatarProps) => {

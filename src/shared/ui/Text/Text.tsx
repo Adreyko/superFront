@@ -8,16 +8,18 @@ interface TextProps {
   text?: string;
   theme?: 'primary' | 'error';
   textAlign?: 'right' | 'left' | 'center';
+  size?: 'normal' | 'xl' | 'large';
 }
 
 const Text: FC<TextProps> = memo(
-  ({ title, theme, text, textAlign = 'left' }: TextProps) => {
+  ({ title, theme, text, textAlign = 'left', size }: TextProps) => {
     return (
       <div
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className={clsx(cls.text, {}, [
           cls[theme ?? 'primary'],
           cls[textAlign],
+          cls[size ?? 'normal'],
         ])}
       >
         {title && <p className={cls.title}>{title}</p>}

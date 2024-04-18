@@ -6,11 +6,10 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 
 interface RequiredAuthProps {
-  className?: string;
   children?: ReactNode;
 }
 
-export const RequiredAuth = ({ className, children }: RequiredAuthProps) => {
+export const RequiredAuth = ({ children }: RequiredAuthProps) => {
   const isAuth = useSelector(getAuthData);
   const location = useLocation();
   const isMounted = useSelector(getIsMounted);

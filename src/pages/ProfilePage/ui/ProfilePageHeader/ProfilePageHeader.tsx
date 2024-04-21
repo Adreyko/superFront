@@ -8,6 +8,9 @@ import { Profile, profileActions } from 'entities/Profile';
 import { updateProfileData } from 'entities/Profile/model/services/updateProfileData';
 import { AsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { useSelector } from 'react-redux';
+import { getAuthData } from 'entities/User';
+import { getProfileData } from 'entities/Profile/model/selectors/getProfileData';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -19,6 +22,12 @@ export const ProfilePageHeader = ({
   readonly,
 }: ProfilePageHeaderProps) => {
   const dispatch = useAppDispatch();
+
+  const authData = useSelector(getAuthData);
+  const profileData = useSelector(getProfileData);
+
+  // eslint-disable-next-line eqeqeq
+  const canEdit = authData?.id == profileData?.id;
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadOnly(false));
@@ -41,20 +50,21 @@ export const ProfilePageHeader = ({
   return (
     <div className={cls.header}>
       <Text title={t('profile')} />
-      {readonly ? (
-        <Button onClick={onEdit} theme='clear' className={cls.editBtn}>
-          {t('edit')}
-        </Button>
-      ) : (
-        <div className={cls.btnContainer}>
-          <Button onClick={onCancelEdit} className={cls.btn} theme='warning'>
-            {t('cancel')}
+      {canEdit &&
+        (readonly ? (
+          <Button onClick={onEdit} theme='clear' className={cls.editBtn}>
+            {t('edit')}
           </Button>
-          <Button onClick={onSave} className={cls.btn} theme='primary'>
-            {t('save')}
-          </Button>
-        </div>
-      )}
+        ) : (
+          <div className={cls.btnContainer}>
+            <Button onClick={onCancelEdit} className={cls.btn} theme='warning'>
+              {t('cancel')}
+            </Button>
+            <Button onClick={onSave} className={cls.btn} theme='primary'>
+              {t('save')}
+            </Button>
+          </div>
+        ))}
     </div>
   );
 };

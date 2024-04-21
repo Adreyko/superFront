@@ -16,12 +16,16 @@ export const updateProfileData = createAsyncThunk<
     const updatedData = getProfileForm(getState());
 
     const errors = validateProfile(updatedData);
+    const formData = getProfileForm(getState());
 
     if (errors.length) {
       return rejectWithValue(errors);
     }
     try {
-      const response = await api.put<Profile>('/profile', updatedData);
+      const response = await api.put<Profile>(
+        `/profile/${formData?.id}`,
+        updatedData
+      );
 
       if (!response.data) {
         throw new Error();

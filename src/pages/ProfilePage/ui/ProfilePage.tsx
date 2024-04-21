@@ -23,6 +23,7 @@ import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileR
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
 import Text from 'shared/ui/Text/Text';
+import { useParams } from 'react-router-dom';
 
 interface ProfilePageProps {
   className?: string;
@@ -34,6 +35,8 @@ const initialReducer = {
 export const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
 
+  const { id } = useParams<{ id: string }>();
+
   const form = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
@@ -42,14 +45,16 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
   const validateErrors = useSelector(gerProfileErrors);
 
   useEffect(() => {
-    dispatch(
-      fetchProfileData() as unknown as AsyncThunk<
-        PROF,
-        void,
-        ThunkConfig<string>
-      >
-    );
-  }, [dispatch]);
+    if (id) {
+      dispatch(
+        fetchProfileData(id) as unknown as AsyncThunk<
+          PROF,
+          void,
+          ThunkConfig<string>
+        >
+      );
+    }
+  }, [dispatch, id]);
 
   const onChangeFirstname = useCallback(
     (val: string) => {

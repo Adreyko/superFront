@@ -20,7 +20,7 @@ import {
 } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { fetchArticleDetailsCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleDetailsCommentsByArticleId';
-import { AddCommentForm, getAddCommentText } from 'features/addNewComment';
+import { AddCommentForm } from 'features/addNewComment';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addComentForArticle';
 
 interface ArticleDetailsPageProps {
@@ -36,7 +36,6 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const error = useSelector(getArticleCommentsError);
-  const comment = useSelector(getAddCommentText);
 
   const dispatch = useAppDispatch();
 

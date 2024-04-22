@@ -11,10 +11,7 @@ import {
   addCommentReducer,
 } from 'features/addNewComment/model/slices/addCommentSlice';
 import { useSelector } from 'react-redux';
-import {
-  getAddCommentError,
-  getAddCommentText,
-} from 'features/addNewComment/selectors/addCommentSelectors';
+import { getAddCommentText } from 'features/addNewComment/selectors/addCommentSelectors';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
@@ -32,7 +29,6 @@ export const AddCommentForm = ({
   onSendComment,
 }: AddCommentFormProps) => {
   const text = useSelector(getAddCommentText);
-  const error = useSelector(getAddCommentError);
 
   const dispatch = useAppDispatch();
 

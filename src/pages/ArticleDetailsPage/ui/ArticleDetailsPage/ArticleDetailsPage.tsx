@@ -2,7 +2,7 @@ import { clsx } from 'shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleDetailsPage.module.scss';
 import { memo, useCallback, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import Text from 'shared/ui/Text/Text';
@@ -22,6 +22,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { fetchArticleDetailsCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleDetailsCommentsByArticleId';
 import { AddCommentForm } from 'features/addNewComment';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addComentForArticle';
+import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import Button from 'shared/ui/Button/Button';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -40,8 +42,15 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     dispatch(fetchArticleDetailsCommentsByArticleId(id!) as any);
   }, [dispatch, id]);
+
+  const navigate = useNavigate();
+
+  const onBackToList = useCallback(() => {
+    navigate(RouterPath.articles);
+  }, [navigate]);
 
   const onCommentSend = useCallback(() => {
     dispatch(addCommentForArticle() as any); // redux types is nightmare :(
@@ -54,6 +63,9 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={initReducers}>
       <div className={clsx(cls.wrapper, {}, [className])}>
+        <Button theme='outline' onClick={onBackToList}>
+          Back to articles
+        </Button>
         <ArticleDetails id={id} />
         <div className={cls.comment}>
           <Text title='Commentaries' />

@@ -12,11 +12,12 @@ interface TextProps {
 }
 
 const Text: FC<TextProps> = memo(
-  ({ title, theme, text, textAlign = 'left', size }: TextProps) => {
+  ({ title, theme, text, textAlign = 'left', size, className }: TextProps) => {
     return (
       <div
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className={clsx(cls.text, {}, [
+          className,
           cls[theme ?? 'primary'],
           cls[textAlign],
           cls[size ?? 'normal'],

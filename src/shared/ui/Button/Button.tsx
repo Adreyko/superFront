@@ -11,7 +11,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'primaryInverted'
     | 'secondary'
     | 'secondaryInverted'
-    | 'warning';
+    | 'warning'
+    | 'outline';
   size?: 'normal' | 'xl' | 'large';
   disabled?: boolean;
 }

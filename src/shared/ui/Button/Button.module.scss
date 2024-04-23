@@ -65,3 +65,9 @@
 .disabled {
     opacity: 0.5;
 }
+
+
+.outline {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+}

@@ -11,6 +11,7 @@ import { fetchArticleDetailsCommentsByArticleId } from './fetchArticleDetailsCom
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const addCommentForArticle = createAsyncThunk<
   Comment,
+  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
   void,
   ThunkConfig<string>
 >(

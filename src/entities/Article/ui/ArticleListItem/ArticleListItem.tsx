@@ -61,7 +61,7 @@ export const ArticleListItem = ({
             {types}
             {views}
           </div>
-          <Text title={article.title} />
+          <Text className={cls.title} title={article.title} />
         </Card>
       </div>
     );

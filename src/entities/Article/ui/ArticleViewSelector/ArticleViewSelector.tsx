@@ -14,8 +14,8 @@ interface ArticleViewSelectorProps {
 }
 
 const ViewTypes = [
-  { view: ArticleView.BIG, icon: ColumnIcon },
-  { view: ArticleView.SMALL, icon: ListIcon },
+  { view: ArticleView.BIG, icon: ListIcon },
+  { view: ArticleView.SMALL, icon: ColumnIcon },
 ];
 
 export const ArticleViewSelector = ({

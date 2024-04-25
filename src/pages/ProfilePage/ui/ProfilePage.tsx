@@ -24,6 +24,7 @@ import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
 import Text from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ProfilePageProps {
   className?: string;
@@ -121,7 +122,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducer}>
-      <div className={clsx(cls, {}, [className])}>
+      <Page className={clsx(cls, {}, [className])}>
         <ProfilePageHeader readonly={readonly} />
         {validateErrors?.map((error) => (
           <Text key={error} title={error} theme='error' />
@@ -140,7 +141,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

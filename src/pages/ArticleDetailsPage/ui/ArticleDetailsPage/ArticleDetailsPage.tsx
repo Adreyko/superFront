@@ -24,6 +24,7 @@ import { AddCommentForm } from 'features/addNewComment';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addComentForArticle';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import Button from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -57,12 +58,14 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }, [dispatch]);
 
   if (!id) {
-    return <div className={clsx(cls, {}, [className])}>Article not found</div>;
+    return (
+      <Page className={clsx(cls, {}, [className])}>Article not found</Page>
+    );
   }
 
   return (
     <DynamicModuleLoader reducers={initReducers}>
-      <div className={clsx(cls.wrapper, {}, [className])}>
+      <Page className={clsx(cls.wrapper, {}, [className])}>
         <Button theme='outline' onClick={onBackToList}>
           Back to articles
         </Button>
@@ -76,7 +79,7 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             error={error}
           />
         </div>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

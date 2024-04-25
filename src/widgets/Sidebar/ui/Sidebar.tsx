@@ -33,7 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   );
 
   return (
-    <div
+    <menu
       className={clsx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <div className={clsx(cls.links)}>{sidebarItems}</div>
@@ -48,7 +48,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <LangSwitcher variant={collapsed ? 'short' : 'full'} />
         <ThemeSwitcher />
       </div>
-    </div>
+    </menu>
   );
 };
 

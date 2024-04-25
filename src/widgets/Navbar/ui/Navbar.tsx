@@ -30,22 +30,22 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={clsx(cls.navbar, {}, [className])}>
+      <header className={clsx(cls.navbar, {}, [className])}>
         <Button onClick={onLogout} className={cls.loginBtn} theme='primary'>
           {t('logout')}
         </Button>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={clsx(cls.navbar, {}, [className])}>
+    <header className={clsx(cls.navbar, {}, [className])}>
       <Button className={cls.loginBtn} theme='primary' onClick={onToggleModal}>
         {t('login')}
       </Button>
       {authModalOpened && (
         <LoginModal isOpen={authModalOpened} onClose={onToggleModal} />
       )}
-    </div>
+    </header>
   );
 };

@@ -9,6 +9,7 @@ import {
 } from 'entities/Article';
 import { useSelector } from 'react-redux';
 import {
+  getArticlePageInited,
   getArticlePageIsLoading,
   getArticlePageView,
 } from 'pages/ArticlePage/model/selectors/getArticlesPageSelectors';
@@ -21,9 +22,9 @@ import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { fetchPageArticles } from 'pages/ArticlePage/model/services/fetchPageArticles';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlePage/model/services/fetchNextArticlesPage';
+import { initArticlesPage } from 'pages/ArticlePage/model/services/initArticlesPage';
 
 interface AriclePageProps {
   className?: string;
@@ -38,11 +39,11 @@ export const ArticlePage = ({ className }: AriclePageProps) => {
   const view = useSelector(getArticlePageView) || ArticleView.SMALL;
   const articles = useSelector(getArticles.selectAll);
   const dispatch = useAppDispatch();
+  const inited = useSelector(getArticlePageInited);
 
   useEffect(() => {
-    dispatch(articlePageActions.initView());
-    dispatch(fetchPageArticles({ page: 1 }) as any);
-  }, [dispatch, view]);
+    dispatch(initArticlesPage() as any);
+  }, [dispatch, inited, view]);
 
   const onViewSelect = useCallback(
     (newView: ArticleView) => {

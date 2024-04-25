@@ -10,7 +10,6 @@ import {
 import { CountSchema } from 'entities/Counter/model/types/counterSchema';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { NavigateFunction } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addNewComment';
@@ -43,7 +42,6 @@ export interface ReducerManager {
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate?: NavigateFunction;
 }
 
 export interface ThunkConfig<T> {

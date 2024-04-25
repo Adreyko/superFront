@@ -23,3 +23,7 @@ export const getArticlePageNumber = (state: StateSchema) => {
 export const getArticlePageHasMore = (state: StateSchema) => {
   return state.ArticlesPageSchema?.hasMore;
 };
+
+export const getArticlePageInited = (state: StateSchema) => {
+  return state.ArticlesPageSchema?._inited;
+};

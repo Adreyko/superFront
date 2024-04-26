@@ -5,5 +5,5 @@ export const getAddCommentError = (state: StateSchema) => {
 };
 
 export const getAddCommentText = (state: StateSchema) => {
-  return state.AddCommentFormSchema?.text;
+  return state.AddCommentFormSchema?.text ?? '';
 };

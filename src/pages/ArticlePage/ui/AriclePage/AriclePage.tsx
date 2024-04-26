@@ -22,7 +22,7 @@ import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlePage/model/services/fetchNextArticlesPage';
 import { initArticlesPage } from 'pages/ArticlePage/model/services/initArticlesPage';
 

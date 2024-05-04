@@ -15,28 +15,25 @@ import { useHover } from 'shared/lib/hooks/useHover';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Button from 'shared/ui/Button/Button';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import AppLink from 'shared/ui/AppLink/AppLink';
+import { HTMLAttributeAnchorTarget } from 'react';
 
 interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = ({
   className,
   article,
   view,
+  target,
 }: ArticleListItemProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isHover, bindHover] = useHover();
-  const navigate = useNavigate();
-
-  const onOpenArticle = useCallback(() => {
-    navigate(RouterPath.articles_details + article.id);
-  }, [article.id, navigate]);
 
   const types = <Text text={article.type.join(', ')} className={cls.type} />;
   const views = (
@@ -48,11 +45,13 @@ export const ArticleListItem = ({
 
   if (view === ArticleView.SMALL) {
     return (
-      <div
+      <AppLink
+        to={RouterPath.articles_details + article.id}
+        target={target}
         {...bindHover}
         className={clsx(cls.articleListItem, {}, [className, cls[view]])}
       >
-        <Card className={cls.card} onClick={onOpenArticle}>
+        <Card className={cls.card}>
           <div className={cls.imageWrapper}>
             <img src={article.img} className={cls.img} alt={article.title} />
             <Text className={cls.date} text={article.createdAt} />
@@ -63,7 +62,7 @@ export const ArticleListItem = ({
           </div>
           <Text className={cls.title} title={article.title} />
         </Card>
-      </div>
+      </AppLink>
     );
   }
 
@@ -88,12 +87,15 @@ export const ArticleListItem = ({
             className={cls.textBlock}
           />
         )}
-        <div className={cls.footer}>
-          <Button onClick={onOpenArticle} theme='outline'>
-            Continue reading...
-          </Button>
+        <a className={cls.footer}>
+          <AppLink
+            to={RouterPath.articles_details + article.id}
+            target={target}
+          >
+            <Button theme='outline'>Continue reading...</Button>
+          </AppLink>
           {views}
-        </div>
+        </a>
       </Card>
     </div>
   );

@@ -3,16 +3,13 @@ import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import cls from './ArticleDetailsPage.module.scss';
 import { memo, useCallback, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import Text from 'shared/ui/Text/Text';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
-import {
-  articleDetailsCommentsReducer,
-  getArticleComments,
-} from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
+import { getArticleComments } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
 import { useSelector } from 'react-redux';
 import {
   getArticleCommentsError,
@@ -25,18 +22,27 @@ import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/ad
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import Button from 'shared/ui/Button/Button';
 import { Page } from 'widgets/Page/Page';
+import { getArticleDetailsRecommendation } from 'pages/ArticleDetailsPage/model/slices/articleDetailsRecommendationSlice';
+import { getArticleRecommendationError } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+import { fetchArticleDetailsRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleDetailsRecommendationts';
+import { ArticleDetailsReducers } from 'pages/ArticleDetailsPage/model/slices';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
 const initReducers: ReducerList = {
-  articleCommentSchema: articleDetailsCommentsReducer,
+  ArticleDetailsSchemas: ArticleDetailsReducers,
 };
 
 export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
   const comments = useSelector(getArticleComments.selectAll);
+  const recommendations = useSelector(
+    getArticleDetailsRecommendation.selectAll
+  );
+  const recommendationsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendationsError = useSelector(getArticleRecommendationError);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const error = useSelector(getArticleCommentsError);
 
@@ -45,6 +51,7 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     dispatch(fetchArticleDetailsCommentsByArticleId(id!) as any);
+    dispatch(fetchArticleDetailsRecommendations() as any);
   }, [dispatch, id]);
 
   const navigate = useNavigate();
@@ -71,6 +78,14 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         </Button>
         <ArticleDetails id={id} />
         <div className={cls.comment}>
+          <Text title='Also to watch: ' />
+          <ArticleList
+            target='_blank'
+            className={cls.recommendations}
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            view={ArticleView.SMALL}
+          />
           <Text title='Commentaries' />
           <AddCommentForm onSendComment={onCommentSend} className={cls.input} />
           <CommentList

@@ -11,10 +11,10 @@ import { CountSchema } from 'entities/Counter/model/types/counterSchema';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addNewComment';
 import { ArticlePageSchema } from 'pages/ArticlePage/model/types/articlePage';
 import { IScrollRestorationSchema } from 'features/scrollRestoration';
+import { ArticleDetailsPageSchemas } from 'pages/ArticleDetailsPage/model/types';
 export interface StateSchema {
   counter: CountSchema;
   user: UserSchema;
@@ -24,9 +24,10 @@ export interface StateSchema {
   loginSchema?: LoginSchema;
   profileSchema?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleCommentSchema?: ArticleCommentSchema;
+
   AddCommentFormSchema?: AddCommentFormSchema;
   ArticlesPageSchema?: ArticlePageSchema;
+  ArticleDetailsSchemas?: ArticleDetailsPageSchemas;
 }
 
 export type StateSchemaKey = keyof StateSchema;

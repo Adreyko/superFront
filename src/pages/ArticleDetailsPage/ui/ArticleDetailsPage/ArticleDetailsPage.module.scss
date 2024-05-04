@@ -13,3 +13,9 @@
 .input {
     flex-grow: 1;
 }
+
+.recommendations {
+    flex-wrap: nowrap !important;
+    overflow-y: hidden;
+    overflow-x: auto;
+}

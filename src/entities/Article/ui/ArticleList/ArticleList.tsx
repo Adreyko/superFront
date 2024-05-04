@@ -5,12 +5,14 @@ import { Article, ArticleView } from 'entities/Article/model/types/article';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 import Text from 'shared/ui/Text/Text';
+import { HTMLAttributeAnchorTarget } from 'react';
 
 interface ArticleListProps {
   className?: string;
   articles?: Article[];
   isLoading?: boolean;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList = ({
@@ -18,6 +20,7 @@ export const ArticleList = ({
   articles,
   isLoading,
   view,
+  target,
 }: ArticleListProps) => {
   const getSkeletons = (view: ArticleView) =>
     new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -36,9 +39,11 @@ export const ArticleList = ({
   }
 
   return (
-    <div className={clsx(cls.articleList, {}, [className, cls[view]])}>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    <div className={clsx(cls.articleList, {}, [cls[view], className])}>
       {articles?.map((article) => (
         <ArticleListItem
+          target={target}
           article={article}
           view={view}
           key={`str${article.id}`}

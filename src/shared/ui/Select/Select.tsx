@@ -1,28 +1,28 @@
 import { clsx } from 'shared/lib/helpers/clsx/clsx';
 import cls from './Select.module.scss';
 import React, { useCallback, useMemo } from 'react';
-interface SelectOptions {
+export interface SelectOptions<T extends string> {
   content: string;
-  value: string;
+  value: T;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
   label?: string;
-  options: SelectOptions[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options: Array<SelectOptions<T>>;
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select = ({
+export const Select = <T extends string>({
   className,
   label,
   options,
   value,
   onChange,
   readonly,
-}: SelectProps) => {
+}: SelectProps<T>) => {
   const optionsList = useMemo(() => {
     return options.map((opt) => (
       <option value={opt.value} key={opt.value} className={cls.option}>
@@ -33,7 +33,7 @@ export const Select = ({
 
   const onChangeHandler = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
-      onChange?.(e.target.value);
+      onChange?.(e.target.value as T);
     },
     [onChange]
   );

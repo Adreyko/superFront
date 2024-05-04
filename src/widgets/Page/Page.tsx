@@ -63,7 +63,12 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef as LegacyRef<HTMLDivElement> | undefined} />
+      {onScrollEnd ? (
+        <div
+          className={cls.trigger}
+          ref={triggerRef as LegacyRef<HTMLDivElement> | undefined}
+        />
+      ) : null}
     </main>
   );
 };

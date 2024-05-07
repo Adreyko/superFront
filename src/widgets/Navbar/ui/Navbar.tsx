@@ -8,6 +8,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { getAuthData, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import Text from 'shared/ui/Text/Text';
+import AppLink from 'shared/ui/AppLink/AppLink';
+import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
   className?: string;
@@ -31,6 +34,12 @@ export const Navbar = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={clsx(cls.navbar, {}, [className])}>
+        <div className={cls.leftSide}>
+          <Text title='News app' />
+          <AppLink to={RouterPath.article_create} theme='secondary'>
+            Create article
+          </AppLink>
+        </div>
         <Button onClick={onLogout} className={cls.loginBtn} theme='primary'>
           {t('logout')}
         </Button>

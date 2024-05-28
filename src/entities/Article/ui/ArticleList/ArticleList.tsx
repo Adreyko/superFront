@@ -23,7 +23,7 @@ export const ArticleList = ({
   target,
 }: ArticleListProps) => {
   const getSkeletons = (view: ArticleView) =>
-    new Array(view === ArticleView.SMALL ? 9 : 3)
+    new Array(view === ArticleView.SMALL ? 12 : 3)
       .fill(0)
       .map((item, index) => (
         <ArticleListItemSkeleton className={cls.card} key={index} view={view} />

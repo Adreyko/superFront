@@ -2,18 +2,16 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from 'copy-webpack-plugin';
+import { BuildOptions } from './types/config';
 export function buildPlugins({
-  html,
+  paths,
   isDev,
   apiUrl,
-}: {
-  html: string;
-  isDev: boolean;
-  apiUrl: string;
-}): webpack.WebpackPluginInstance[] {
+}: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
-      template: html,
+      template: paths.html,
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
@@ -23,6 +21,9 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+    }),
+    new CopyPlugin({
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
   ];
   if (isDev) {

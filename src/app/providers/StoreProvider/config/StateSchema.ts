@@ -15,10 +15,12 @@ import { AddCommentFormSchema } from 'features/addNewComment';
 import { ArticlePageSchema } from 'pages/ArticlePage/model/types/articlePage';
 import { IScrollRestorationSchema } from 'features/scrollRestoration';
 import { ArticleDetailsPageSchemas } from 'pages/ArticleDetailsPage/model/types';
+import { rtkApi } from 'shared/api/rtkApi';
 export interface StateSchema {
   counter: CountSchema;
   user: UserSchema;
   scroll: IScrollRestorationSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // async reducers
   loginSchema?: LoginSchema;

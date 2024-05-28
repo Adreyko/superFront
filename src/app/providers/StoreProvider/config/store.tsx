@@ -13,6 +13,7 @@ import { createReducerManager } from './reducerManagaer';
 import { api } from 'shared/api/api';
 import { NavigateFunction } from 'react-router-dom';
 import { scrollReducer } from 'features/scrollRestoration';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -20,10 +21,11 @@ export function createReduxStore(
   navigate?: NavigateFunction
 ) {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
     scroll: scrollReducer,
-    ...asyncReducers,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -41,7 +43,9 @@ export function createReduxStore(
         thunk: {
           extraArgument: extraArg,
         },
-      }) as unknown as [ThunkMiddleware<StateSchema, AnyAction, undefined>],
+      }).concat(rtkApi.middleware) as unknown as [
+        ThunkMiddleware<StateSchema, AnyAction, undefined>
+      ],
   });
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

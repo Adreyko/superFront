@@ -11,6 +11,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import Text from 'shared/ui/Text/Text';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import {
+  getIsUserAdmin,
+  getIsUserManager,
+} from 'entities/User/model/selectors/roleSelector';
 
 interface NavbarProps {
   className?: string;
@@ -31,6 +35,11 @@ export const Navbar = ({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const isAdmin = useSelector(getIsUserAdmin);
+  const isManager = useSelector(getIsUserManager);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   if (authData) {
     return (
       <header className={clsx(cls.navbar, {}, [className])}>
@@ -39,7 +48,13 @@ export const Navbar = ({ className }: NavbarProps) => {
           <AppLink to={RouterPath.article_create} theme='secondary'>
             Create article
           </AppLink>
+          {isAdminPanelAvailable && (
+            <AppLink to={RouterPath.admin_panel} theme='secondary'>
+              Admin
+            </AppLink>
+          )}
         </div>
+
         <Button onClick={onLogout} className={cls.loginBtn} theme='primary'>
           {t('logout')}
         </Button>

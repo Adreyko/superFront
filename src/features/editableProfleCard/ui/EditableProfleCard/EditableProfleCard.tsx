@@ -125,7 +125,7 @@ const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         max
         className={clsx(cls.editableProfileCard, {}, [className])}
       >
-        <EditableProfileCardHeader />
+        <EditableProfileCardHeader readonly={readonly}/>
         {validateErrors?.map((error) => (
           <Text key={error} title={error} theme='error' />
         ))}

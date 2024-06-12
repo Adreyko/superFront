@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 import Button from '@/shared/ui/Button/Button';
-import cls from './EditableProfileCardHeader.scss';
+import cls from './EditableProfileCardHeader.module.scss'
 import Text from '@/shared/ui/Text/Text';
 import { useCallback } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';

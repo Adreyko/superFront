@@ -1,7 +1,7 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
-import Button from 'shared/ui/Button/Button';
+import Button from '@/shared/ui/Button/Button';
 
 interface PageErrorProps {
 className?: string;

@@ -5,8 +5,8 @@ import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClasses } from '../../consts/consts';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/Popup.module.scss';
-import { DropdownDirection } from 'shared/types';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { DropdownDirection } from '@/shared/types';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 export interface DropdownItem {
   disabled?: boolean;

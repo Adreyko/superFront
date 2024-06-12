@@ -1,8 +1,8 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleImageBlockComponent.module.scss';
-import { ArticleImageBlock } from 'entities/Article/model/types/article';
-import Text from 'shared/ui/Text/Text';
+import { ArticleImageBlock } from '@/entities/Article/model/types/article';
+import Text from '@/shared/ui/Text/Text';
 
 interface ArticleImageBlockComponentProps {
   className?: string;

@@ -1,5 +1,5 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import Button from 'shared/ui/Button/Button';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import Button from '@/shared/ui/Button/Button';
 import cls from './LangSwitcher.module.scss';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';

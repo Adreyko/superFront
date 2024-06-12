@@ -1,11 +1,11 @@
 import cls from './SidebarItems.module.scss';
-import AppLink from 'shared/ui/AppLink/AppLink';
+import AppLink from '@/shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import { memo } from 'react';
-import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebarItems';
+import { SidebarItemType } from '@/widgets/Sidebar/model/types/sidebarItems';
 interface SidebarItemsProps {
   items: SidebarItemType;
   collapsed?: boolean;

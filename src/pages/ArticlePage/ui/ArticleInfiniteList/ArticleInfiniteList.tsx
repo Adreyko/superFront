@@ -1,14 +1,14 @@
-import { ArticleList, ArticleView } from 'entities/Article';
+import { ArticleList, ArticleView } from '@/entities/Article';
 import {
   getArticlePageIsLoading,
   getArticlePageView,
-} from 'pages/ArticlePage/model/selectors/getArticlesPageSelectors';
-import { initArticlesPage } from 'pages/ArticlePage/model/services/initArticlesPage';
-import { getArticles } from 'pages/ArticlePage/model/slices/articlePageSlice';
+} from '@/pages/ArticlePage/model/selectors/getArticlesPageSelectors';
+import { initArticlesPage } from '@/pages/ArticlePage/model/services/initArticlesPage';
+import { getArticles } from '@/pages/ArticlePage/model/slices/articlePageSlice';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 interface ArticleInfiniteListProps {
   className?: string;

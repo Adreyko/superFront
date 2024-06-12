@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticlesPageFilters.module.scss';
 import {
@@ -6,8 +6,8 @@ import {
   ArticleType,
   ArticleView,
   ArticleViewSelector,
-} from 'entities/Article';
-import { articlePageActions } from 'pages/ArticlePage/model/slices/articlePageSlice';
+} from '@/entities/Article';
+import { articlePageActions } from '@/pages/ArticlePage/model/slices/articlePageSlice';
 import { useCallback } from 'react';
 import {
   getArticlePageOrder,
@@ -15,17 +15,17 @@ import {
   getArticlePageSort,
   getArticlePageView,
   getArticlesPageType,
-} from 'pages/ArticlePage/model/selectors/getArticlesPageSelectors';
+} from '@/pages/ArticlePage/model/selectors/getArticlesPageSelectors';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import Card from 'shared/ui/Card/Card';
-import Input from 'shared/ui/Input/Input';
-import ArticleSortSelector from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
-import { SortOrder } from 'shared/types';
-import { fetchPageArticles } from 'pages/ArticlePage/model/services/fetchPageArticles';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { TabItem } from 'shared/ui/Tabs/Tabs';
-import { ArticleTypeTabs } from 'features/ArticleTabsTypes';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import Card from '@/shared/ui/Card/Card';
+import Input from '@/shared/ui/Input/Input';
+import ArticleSortSelector from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { SortOrder } from '@/shared/types';
+import { fetchPageArticles } from '@/pages/ArticlePage/model/services/fetchPageArticles';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { ArticleTypeTabs } from '@/features/ArticleTabsTypes';
 
 interface ArticlesPageFiltersProps {
   className?: string;

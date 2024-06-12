@@ -4,8 +4,8 @@ import cls from './Popover.module.scss';
 
 import { mapDirectionClasses } from '../../consts/consts';
 import popupCls from '../../styles/Popup.module.scss';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import { DropdownDirection } from 'shared/types';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import { DropdownDirection } from '@/shared/types';
 
 interface PopoverProps {
   className?: string;

@@ -1,12 +1,12 @@
 import { useTheme } from './providers/ThemeProvider';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import { AppRouter } from './providers/router';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { PageLoader } from 'widgets/PageLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { userActions } from 'entities/User';
+import { PageLoader } from '@/widgets/PageLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { userActions } from '@/entities/User';
 
 const App = () => {
   const { theme } = useTheme();

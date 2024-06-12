@@ -1,29 +1,29 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleDetails.module.scss';
 import DynamicModuleLoader, {
   ReducerList,
-} from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+} from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useCallback, useEffect } from 'react';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDatils';
-import Text from 'shared/ui/Text/Text';
-import Skeleton from 'shared/ui/Skeleton/Skeleton';
-import Avatar from 'shared/ui/Avatar/Avatar';
-import EyeIcon from 'shared/assets/icons/eye-outlined.svg';
-import CalendarIcon from 'shared/assets/icons/calendar.svg';
-import Icon from 'shared/ui/Icon/Icon';
+} from '@/entities/Article/model/selectors/articleDatils';
+import Text from '@/shared/ui/Text/Text';
+import Skeleton from '@/shared/ui/Skeleton/Skeleton';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye-outlined.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import Icon from '@/shared/ui/Icon/Icon';
 import {
   ArticleBlock,
   ArticleBlockType,
-} from 'entities/Article/model/types/article';
+} from '@/entities/Article/model/types/article';
 import ArticleCodeComponent from '../ArticleCodeComponent/ArticleCodeComponent';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';

@@ -1,13 +1,13 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleDetailsPageHeader.module.scss';
-import Button from 'shared/ui/Button/Button';
+import Button from '@/shared/ui/Button/Button';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { getCanEditArticle } from '@/pages/ArticleDetailsPage/model/selectors/article';
 import { useSelector } from 'react-redux';
-import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDatils';
+import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDatils';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

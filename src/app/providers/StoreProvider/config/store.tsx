@@ -7,13 +7,13 @@ import {
   configureStore,
 } from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { counterReducer } from 'entities/Counter/model/slice/counterSlice';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '@/entities/Counter/model/slice/counterSlice';
+import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManagaer';
-import { api } from 'shared/api/api';
+import { api } from '@/shared/api/api';
 import { NavigateFunction } from 'react-router-dom';
-import { scrollReducer } from 'features/scrollRestoration';
-import { rtkApi } from 'shared/api/rtkApi';
+import { scrollReducer } from '@/features/scrollRestoration';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
   initialState?: StateSchema,

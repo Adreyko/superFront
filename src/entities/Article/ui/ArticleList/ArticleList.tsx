@@ -1,10 +1,10 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleList.module.scss';
-import { Article, ArticleView } from 'entities/Article/model/types/article';
+import { Article, ArticleView } from '@/entities/Article/model/types/article';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
-import Text from 'shared/ui/Text/Text';
+import Text from '@/shared/ui/Text/Text';
 import { HTMLAttributeAnchorTarget } from 'react';
 
 interface ArticleListProps {

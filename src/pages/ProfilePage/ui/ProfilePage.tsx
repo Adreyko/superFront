@@ -1,10 +1,10 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './ProfilePage.module.scss';
-import DynamicModuleLoader from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from 'entities/Profile';
+import DynamicModuleLoader from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+import { profileReducer } from '@/entities/Profile';
 
-import { Page } from 'widgets/Page/Page';
-import EditableProfileCard from 'features/editableProfleCard/ui/EditableProfleCard/EditableProfleCard';
+import { Page } from '@/widgets/Page/Page';
+import EditableProfileCard from '@/features/editableProfleCard/ui/EditableProfleCard/EditableProfleCard';
 import { useParams } from 'react-router-dom';
 
 interface ProfilePageProps {

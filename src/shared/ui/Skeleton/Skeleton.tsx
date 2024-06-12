@@ -1,7 +1,7 @@
 import { CSSProperties, FC, memo } from 'react';
 
 import cls from './Skeleton.module.scss';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 interface SkeletonProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleListItem.module.scss';
 import {
@@ -7,16 +7,16 @@ import {
   ArticleTextBlock,
   ArticleView,
 } from '../../model/types/article';
-import Text from 'shared/ui/Text/Text';
-import Icon from 'shared/ui/Icon/Icon';
-import EyeIcon from 'shared/assets/icons/eye-outlined.svg';
-import Card from 'shared/ui/Card/Card';
-import { useHover } from 'shared/lib/hooks/useHover';
-import Avatar from 'shared/ui/Avatar/Avatar';
-import Button from 'shared/ui/Button/Button';
+import Text from '@/shared/ui/Text/Text';
+import Icon from '@/shared/ui/Icon/Icon';
+import EyeIcon from '@/shared/assets/icons/eye-outlined.svg';
+import Card from '@/shared/ui/Card/Card';
+import { useHover } from '@/shared/lib/hooks/useHover';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import Button from '@/shared/ui/Button/Button';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import AppLink from 'shared/ui/AppLink/AppLink';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import AppLink from '@/shared/ui/AppLink/AppLink';
 import { HTMLAttributeAnchorTarget } from 'react';
 
 interface ArticleListItemProps {

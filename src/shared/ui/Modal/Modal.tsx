@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { Mods, clsx } from 'shared/lib/helpers/clsx/clsx';
+import { Mods, clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Modal.module.scss';
 import {
   ReactNode,
@@ -10,7 +10,7 @@ import {
   useCallback,
 } from 'react';
 import Portal from '../Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
 
 export interface ModalProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 import { StoryFn } from '@storybook/react';
 import './../../../app/styles/index.scss'
 

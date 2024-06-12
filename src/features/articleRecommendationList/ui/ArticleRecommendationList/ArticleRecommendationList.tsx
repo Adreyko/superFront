@@ -1,9 +1,9 @@
 import cls from './ArticleRecommendationList.module.scss';
 import { memo } from 'react';
-import Text from 'shared/ui/Text/Text';
-import { ArticleList, ArticleView } from 'entities/Article';
-import VStack from 'shared/ui/Stack/VStack/VStack';
-import { useArticleRecommendationsList } from 'features/articleRecommendationList/api/articleRecommendationApi';
+import Text from '@/shared/ui/Text/Text';
+import { ArticleList, ArticleView } from '@/entities/Article';
+import VStack from '@/shared/ui/Stack/VStack/VStack';
+import { useArticleRecommendationsList } from '@/features/articleRecommendationList/api/articleRecommendationApi';
 
 interface ArticleRecommendationListProps {
   className?: string;

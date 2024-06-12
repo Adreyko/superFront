@@ -1,11 +1,11 @@
-import { getAuthData } from 'entities/User';
-import { UserRole } from 'entities/User/model/const/userConsts';
-import { getIsMounted } from 'entities/User/model/selectors/getIsMounted';
-import { getAllRoles } from 'entities/User/model/selectors/roleSelector';
+import { getAuthData } from '@/entities/User';
+import { UserRole } from '@/entities/User/model/const/userConsts';
+import { getIsMounted } from '@/entities/User/model/selectors/getIsMounted';
+import { getAllRoles } from '@/entities/User/model/selectors/roleSelector';
 import { ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 
 interface RequiredAuthProps {
   children?: ReactNode;

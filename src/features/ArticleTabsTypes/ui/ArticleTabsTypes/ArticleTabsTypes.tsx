@@ -2,8 +2,8 @@ import { FC, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import cls from './ArticleTabsTypes.module.scss';
-import { ArticleType } from 'entities/Article';
-import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs';
+import { ArticleType } from '@/entities/Article';
+import Tabs, { TabItem } from '@/shared/ui/Tabs/Tabs';
 
 interface ArticleTypeTabsProps {
   type: ArticleType;

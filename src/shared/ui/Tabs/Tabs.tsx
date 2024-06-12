@@ -2,7 +2,7 @@ import { FC, memo, useMemo } from 'react';
 
 import Card from '../Card/Card';
 import cls from './Tabs.module.scss';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 export interface TabItem {
   value: string;

@@ -1,8 +1,8 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './ArticleEditPage.module.scss';
-import { Page } from 'widgets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
 import { useParams } from 'react-router-dom';
-import EditArticle from 'features/editArticle/ui/EditArticle';
+import EditArticle from '@/features/editArticle/ui/EditArticle';
 
 interface ArticleEditPageProps {
   className?: string;

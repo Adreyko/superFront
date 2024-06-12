@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Select.module.scss';
 import React, { useCallback, useMemo } from 'react';
 export interface SelectOptions<T extends string> {

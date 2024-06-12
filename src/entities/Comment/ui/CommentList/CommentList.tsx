@@ -1,8 +1,8 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './CommentList.module.scss';
 import CommentCard from '../CommentCard/CommentCard';
-import { Comment } from 'entities/Comment/model/types/comments';
+import { Comment } from '@/entities/Comment/model/types/comments';
 
 interface CommentListProps {
   className?: string;

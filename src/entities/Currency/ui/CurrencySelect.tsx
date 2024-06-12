@@ -1,4 +1,4 @@
-import Select from 'shared/ui/Select/Select';
+import Select from '@/shared/ui/Select/Select';
 import { Currency } from '../model/types/currency';
 import { useCallback } from 'react';
 

@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Text.module.scss';
 import { FC, memo } from 'react';
 

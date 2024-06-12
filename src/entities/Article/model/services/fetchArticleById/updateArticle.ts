@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 
-import { api } from 'shared/api/api';
+import { api } from '@/shared/api/api';
 import {
   getArticleDetailsData,
   getArticleDetailsForm,

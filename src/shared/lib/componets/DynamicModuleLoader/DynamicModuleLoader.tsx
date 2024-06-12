@@ -2,10 +2,10 @@ import { Reducer } from '@reduxjs/toolkit';
 import {
   ReduxStoreWithManager,
   StateSchemaKey,
-} from 'app/providers/StoreProvider/config/StateSchema';
+} from '@/app/providers/StoreProvider/config/StateSchema';
 import { ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer;

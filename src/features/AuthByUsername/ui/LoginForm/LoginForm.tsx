@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { ReactNode, memo, useCallback } from 'react';
@@ -6,17 +6,17 @@ import { useSelector } from 'react-redux';
 import {
   loginActions,
   loginReducer,
-} from 'features/AuthByUsername/model/slice/loginSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername';
-import Input from 'shared/ui/Input/Input';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import Button from 'shared/ui/Button/Button';
-import Text from 'shared/ui/Text/Text';
-import DynamicModuleLoader from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/features/AuthByUsername/model/slice/loginSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { getLoginUsername } from '@/features/AuthByUsername/model/selectors/getLoginUsername';
+import Input from '@/shared/ui/Input/Input';
+import { getLoginError } from '@/features/AuthByUsername/model/selectors/getLoginError';
+import { getLoginIsLoading } from '@/features/AuthByUsername/model/selectors/getLoginIsLoading';
+import { getLoginPassword } from '@/features/AuthByUsername/model/selectors/getLoginPassword';
+import { loginByUsername } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import Button from '@/shared/ui/Button/Button';
+import Text from '@/shared/ui/Text/Text';
+import DynamicModuleLoader from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface LoginFormProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './AppLink.module.scss';
 import { FC, ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';

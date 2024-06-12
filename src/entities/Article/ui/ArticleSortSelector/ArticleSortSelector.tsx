@@ -1,10 +1,10 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleSortSelector.module.scss';
-import Select, { SelectOptions } from 'shared/ui/Select/Select';
+import Select, { SelectOptions } from '@/shared/ui/Select/Select';
 import { useMemo } from 'react';
-import { ArticleSortField } from 'entities/Article/model/types/article';
-import { SortOrder } from 'shared/types';
+import { ArticleSortField } from '@/entities/Article/model/types/article';
+import { SortOrder } from '@/shared/types';
 
 interface ArticleSortSelectorProps {
   className?: string;

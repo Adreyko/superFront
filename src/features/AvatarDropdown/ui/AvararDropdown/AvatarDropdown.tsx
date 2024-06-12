@@ -1,16 +1,16 @@
-import { AppDispatch } from 'app/providers/StoreProvider';
-import { getAuthData, userActions } from 'entities/User';
+import { AppDispatch } from '@/app/providers/StoreProvider';
+import { getAuthData, userActions } from '@/entities/User';
 import {
   getIsUserAdmin,
   getIsUserManager,
-} from 'entities/User/model/selectors/roleSelector';
+} from '@/entities/User/model/selectors/roleSelector';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import Avatar from 'shared/ui/Avatar/Avatar';
-import { Dropdown } from 'shared/ui/Popups';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
 
 interface AvatarDropdownProps {
   className?: string;

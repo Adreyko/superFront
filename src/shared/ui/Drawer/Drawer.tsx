@@ -5,12 +5,12 @@ import Overlay from '../Overlay/Overlay';
 import Portal from '../Portal/Portal';
 import cls from './Drawer.module.scss';
 
-import { useModal } from 'shared/lib/hooks/useModal';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { useModal } from '@/shared/lib/hooks/useModal';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import {
   AnimationProvider,
   useAnimationLibs,
-} from 'shared/lib/componets/AnimationProvider/AnimationProvider';
+} from '@/shared/lib/componets/AnimationProvider/AnimationProvider';
 
 interface DrawerProps {
   className?: string;

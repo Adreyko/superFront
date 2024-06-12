@@ -1,18 +1,18 @@
-import { CommentList } from 'entities/Comment';
-import { AddCommentForm } from 'features/addNewComment';
-import { ArticleRecommendationList } from 'features/articleRecommendationList';
+import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/addNewComment';
+import { ArticleRecommendationList } from '@/features/articleRecommendationList';
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError,
-} from 'pages/ArticleDetailsPage/model/selectors/comments';
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addComentForArticle';
-import { fetchArticleDetailsCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchArticleDetailsCommentsByArticleId';
-import { getArticleComments } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
+} from '@/pages/ArticleDetailsPage/model/selectors/comments';
+import { addCommentForArticle } from '@/pages/ArticleDetailsPage/model/services/addComentForArticle';
+import { fetchArticleDetailsCommentsByArticleId } from '@/pages/ArticleDetailsPage/model/services/fetchArticleDetailsCommentsByArticleId';
+import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import VStack from 'shared/ui/Stack/VStack/VStack';
-import Text from 'shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import VStack from '@/shared/ui/Stack/VStack/VStack';
+import Text from '@/shared/ui/Text/Text';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

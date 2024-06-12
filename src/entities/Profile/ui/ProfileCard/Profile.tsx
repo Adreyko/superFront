@@ -1,16 +1,16 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Profile.module.scss';
-import Text from 'shared/ui/Text/Text';
+import Text from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import Input from 'shared/ui/Input/Input';
-import { Profile } from 'entities/Profile/model/types/profile';
-import Loader from 'shared/ui/Loader/Loader';
+import Input from '@/shared/ui/Input/Input';
+import { Profile } from '@/entities/Profile/model/types/profile';
+import Loader from '@/shared/ui/Loader/Loader';
 
-import Avatar from 'shared/ui/Avatar/Avatar';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { CurrencySelect } from 'entities/Currency';
-import { Country } from 'entities/Country/model/types/country';
-import CountrySelect from 'entities/Country/ui/CountrySelect';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Currency } from '@/entities/Currency/model/types/currency';
+import { CurrencySelect } from '@/entities/Currency';
+import { Country } from '@/entities/Country/model/types/country';
+import CountrySelect from '@/entities/Country/ui/CountrySelect';
 
 interface ProfileProps {
   className?: string;

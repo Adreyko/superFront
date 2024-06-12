@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+
 import AvatarDropdown from './AvatarDropdown';
-import { Theme } from '@/shared/const/theme';
+import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 const meta = {
   title: 'features/AvatarDropdown',

@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
 import cls from './NotificationItem.module.scss';
-import AppLink from 'shared/ui/AppLink/AppLink';
-import Card from 'shared/ui/Card/Card';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import Text from 'shared/ui/Text/Text';
-import { Notification } from 'entities/Notifications/model/types/notifications';
+import AppLink from '@/shared/ui/AppLink/AppLink';
+import Card from '@/shared/ui/Card/Card';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import Text from '@/shared/ui/Text/Text';
+import { Notification } from '@/entities/Notifications/model/types/notifications';
 interface NotificationItemProps {
   className?: string;
   item: Notification;

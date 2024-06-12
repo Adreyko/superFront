@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { User, userActions } from 'entities/User';
-import { api } from 'shared/api/api';
-import { USER_LOCAL_STORAGE_KEY } from 'shared/const/localstorage';
+import { User, userActions } from '@/entities/User';
+import { api } from '@/shared/api/api';
+import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localstorage';
 interface LoginByUsernameProps {
   username: string;
   password: string;

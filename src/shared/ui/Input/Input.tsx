@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<

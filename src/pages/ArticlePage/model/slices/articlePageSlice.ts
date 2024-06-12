@@ -3,18 +3,18 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 import {
   Article,
   ArticleSortField,
   ArticleType,
   ArticleView,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { ArticlePageSchema } from '../types/articlePage';
 import { fetchPageArticles } from '../services/fetchPageArticles';
-import { ARTICLE_VIEW_STORAGE_KEY } from 'shared/const/localstorage';
-import { SortOrder } from 'shared/types';
+import { ARTICLE_VIEW_STORAGE_KEY } from '@/shared/const/localstorage';
+import { SortOrder } from '@/shared/types';
 
 const articlesPageAdapter = createEntityAdapter({
   selectId: (article: Article) => article.id,

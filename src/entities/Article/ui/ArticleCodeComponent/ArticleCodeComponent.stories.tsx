@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleCodeComponent from './ArticleCodeComponent';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 
 const meta: Meta<typeof ArticleCodeComponent> = {
   title: 'widgets/ArticleCodeComponent',

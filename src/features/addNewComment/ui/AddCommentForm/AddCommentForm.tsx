@@ -1,19 +1,19 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './AddCommentForm.module.scss';
-import Input from 'shared/ui/Input/Input';
-import Button from 'shared/ui/Button/Button';
+import Input from '@/shared/ui/Input/Input';
+import Button from '@/shared/ui/Button/Button';
 import DynamicModuleLoader, {
   ReducerList,
-} from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
 import {
   addCommentActions,
   addCommentReducer,
-} from 'features/addNewComment/model/slices/addCommentSlice';
+} from '@/features/addNewComment/model/slices/addCommentSlice';
 import { useSelector } from 'react-redux';
-import { getAddCommentText } from 'features/addNewComment/selectors/addCommentSelectors';
+import { getAddCommentText } from '@/features/addNewComment/selectors/addCommentSelectors';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 interface AddCommentFormProps {
   className?: string;

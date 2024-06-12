@@ -1,23 +1,23 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './EditArticle.module.scss';
 import DynamicModuleLoader, {
   ReducerList,
-} from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
 import {
   articleDetailsActions,
   articleDetailsReducer,
-} from 'entities/Article/model/slice/articleDetailsSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+} from '@/entities/Article/model/slice/articleDetailsSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
   getArticleDetailsForm,
   getArticleDetailsReadonly,
-} from 'entities/Article/model/selectors/articleDatils';
-import Input from 'shared/ui/Input/Input';
-import Button from 'shared/ui/Button/Button';
-import { updateArticleData } from 'entities/Article/model/services/fetchArticleById/updateArticle';
+} from '@/entities/Article/model/selectors/articleDatils';
+import Input from '@/shared/ui/Input/Input';
+import Button from '@/shared/ui/Button/Button';
+import { updateArticleData } from '@/entities/Article/model/services/fetchArticleById/updateArticle';
 
 interface EditArticleProps {
   className?: string;

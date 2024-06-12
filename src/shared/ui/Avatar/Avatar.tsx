@@ -1,5 +1,5 @@
 import { CSSProperties, useMemo } from 'react';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 interface AvatarProps {
   className?: string;

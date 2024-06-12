@@ -1,17 +1,17 @@
 import { t } from 'i18next';
-import Button from 'shared/ui/Button/Button';
+import Button from '@/shared/ui/Button/Button';
 import cls from './EditableProfileCardHeader.scss';
-import Text from 'shared/ui/Text/Text';
+import Text from '@/shared/ui/Text/Text';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Profile, profileActions } from 'entities/Profile';
-import { updateProfileData } from 'entities/Profile/model/services/updateProfileData';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Profile, profileActions } from '@/entities/Profile';
+import { updateProfileData } from '@/entities/Profile/model/services/updateProfileData';
 import { AsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { useSelector } from 'react-redux';
-import { getAuthData } from 'entities/User';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData';
-import HStack from 'shared/ui/Stack/HStack/HStack';
+import { getAuthData } from '@/entities/User';
+import { getProfileData } from '@/entities/Profile/model/selectors/getProfileData';
+import HStack from '@/shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
   className?: string;

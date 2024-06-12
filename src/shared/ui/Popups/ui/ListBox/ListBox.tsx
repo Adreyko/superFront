@@ -4,10 +4,10 @@ import cls from './ListBox.module.scss';
 
 import { mapDirectionClasses } from '../../consts/consts';
 import popupCls from '../../styles/Popup.module.scss';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import Button from 'shared/ui/Button/Button';
-import HStack from 'shared/ui/Stack/HStack/HStack';
-import { DropdownDirection } from 'shared/types';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import Button from '@/shared/ui/Button/Button';
+import HStack from '@/shared/ui/Stack/HStack/HStack';
+import { DropdownDirection } from '@/shared/types';
 export interface LabelOption<T extends string> {
   value?: T;
   content?: string;

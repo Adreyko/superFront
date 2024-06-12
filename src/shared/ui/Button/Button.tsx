@@ -1,4 +1,4 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 

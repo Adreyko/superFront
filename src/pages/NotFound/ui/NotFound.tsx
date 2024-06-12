@@ -1,7 +1,7 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './NotFound.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
 
 interface NotFountProps {
   className?: string;

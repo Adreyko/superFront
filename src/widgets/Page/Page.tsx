@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './Page.module.scss';
 import {
@@ -11,13 +11,13 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useThrottle } from 'shared/lib/hooks/useTrottle';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { getScrollPosition, scrollActions } from 'features/scrollRestoration';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useThrottle } from '@/shared/lib/hooks/useTrottle';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getScrollPosition, scrollActions } from '@/features/scrollRestoration';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 interface PageProps {
   className?: string;

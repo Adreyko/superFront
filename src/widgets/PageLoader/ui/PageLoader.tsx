@@ -1,6 +1,6 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './PageLoader.module.scss';
-import Loader from 'shared/ui/Loader/Loader';
+import Loader from '@/shared/ui/Loader/Loader';
 
 interface PageLoaderProps {
 className?: string;

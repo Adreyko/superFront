@@ -1,28 +1,28 @@
 import { AsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Country } from 'entities/Country/model/types/country';
-import { Currency } from 'entities/Currency';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country/model/types/country';
+import { Currency } from '@/entities/Currency';
 import {
   profileReducer,
   fetchProfileData,
   profileActions,
   Profile,
   gerProfileErrors,
-} from 'entities/Profile';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError';
-import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading';
-import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly';
-import ProfileCard from 'entities/Profile/ui/ProfileCard/Profile';
+} from '@/entities/Profile';
+import { getProfileError } from '@/entities/Profile/model/selectors/getProfileError';
+import { getProfileForm } from '@/entities/Profile/model/selectors/getProfileForm';
+import { getProfileIsLoading } from '@/entities/Profile/model/selectors/getProfileIsLoading';
+import { getProfileReadonly } from '@/entities/Profile/model/selectors/getProfileReadonly';
+import ProfileCard from '@/entities/Profile/ui/ProfileCard/Profile';
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import DynamicModuleLoader, {
   ReducerList,
-} from 'shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import VStack from 'shared/ui/Stack/VStack/VStack';
-import Text from 'shared/ui/Text/Text';
+} from '@/shared/lib/componets/DynamicModuleLoader/DynamicModuleLoader';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import VStack from '@/shared/ui/Stack/VStack/VStack';
+import Text from '@/shared/ui/Text/Text';
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import cls from './EditableProfleCard.module.scss';
 const reducers: ReducerList = {

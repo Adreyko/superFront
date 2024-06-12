@@ -1,11 +1,11 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 
 import cls from './ArticleViewSelector.module.scss';
-import { ArticleView } from 'entities/Article/model/types/article';
-import ColumnIcon from 'shared/assets/icons/articles-column.svg';
-import ListIcon from 'shared/assets/icons/articles-list.svg';
-import Button from 'shared/ui/Button/Button';
-import Icon from 'shared/ui/Icon/Icon';
+import { ArticleView } from '@/entities/Article/model/types/article';
+import ColumnIcon from '@/shared/assets/icons/articles-column.svg';
+import ListIcon from '@/shared/assets/icons/articles-list.svg';
+import Button from '@/shared/ui/Button/Button';
+import Icon from '@/shared/ui/Icon/Icon';
 
 interface ArticleViewSelectorProps {
   className?: string;

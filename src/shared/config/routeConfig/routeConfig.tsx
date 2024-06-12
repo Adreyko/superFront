@@ -1,10 +1,10 @@
-import { UserRole } from 'entities/User/model/const/userConsts';
-import { About, Main, ProfilePage } from 'pages';
-import AdminPanel from 'pages/AdminPanelPage/ui/AdminPanel';
-import { ArticlePageDetails } from 'pages/ArticleDetailsPage';
-import { ArticleEditPage } from 'pages/ArticleEditPage';
-import { ArticlePage } from 'pages/ArticlePage';
-import { NotFound } from 'pages/NotFound';
+import { UserRole } from '@/entities/User/model/const/userConsts';
+import { About, Main, ProfilePage } from '@/pages';
+import AdminPanel from '@/pages/AdminPanelPage/ui/AdminPanel';
+import { ArticlePageDetails } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlePage } from '@/pages/ArticlePage';
+import { NotFound } from '@/pages/NotFound';
 import { RouteProps } from 'react-router-dom';
 
 export type AppRouterProps = RouteProps & {

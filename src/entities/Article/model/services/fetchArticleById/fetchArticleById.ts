@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Article } from '../../types/article';
-import { api } from 'shared/api/api';
+import { api } from '@/shared/api/api';
 
 export const fetchArticleById = createAsyncThunk<
   Article,

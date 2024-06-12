@@ -1,11 +1,11 @@
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './Sidebar.module.scss';
 import { useMemo, useState } from 'react';
-import Button from 'shared/ui/Button/Button';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import LangSwitcher from 'widgets/LangSwitcher/LangSwitcher';
+import Button from '@/shared/ui/Button/Button';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import LangSwitcher from '@/widgets/LangSwitcher/LangSwitcher';
 
-import { getAuthData } from 'entities/User';
+import { getAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../model/selectors/getSidebarItems';
 import SidebarItems from './SidebarItems/SidebarItems';

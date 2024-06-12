@@ -1,10 +1,10 @@
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from '@/entities/Article/model/types/article';
 import { FC, memo } from 'react';
-import { clsx } from 'shared/lib/helpers/clsx/clsx';
+import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import cls from './ArticleListItem.module.scss';
-import Text from 'shared/ui/Text/Text';
-import Card from 'shared/ui/Card/Card';
-import Skeleton from 'shared/ui/Skeleton/Skeleton';
+import Text from '@/shared/ui/Text/Text';
+import Card from '@/shared/ui/Card/Card';
+import Skeleton from '@/shared/ui/Skeleton/Skeleton';
 
 interface ArticleListItemSkeletonProps {
   className?: string;

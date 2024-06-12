@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDatils';
-import { Comment } from 'entities/Comment';
-import { getAuthData } from 'entities/User';
-import { getAddCommentText } from 'features/addNewComment';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDatils';
+import { Comment } from '@/entities/Comment';
+import { getAuthData } from '@/entities/User';
+import { getAddCommentText } from '@/features/addNewComment';
 
-import { api } from 'shared/api/api';
+import { api } from '@/shared/api/api';
 import { fetchArticleDetailsCommentsByArticleId } from './fetchArticleDetailsCommentsByArticleId';
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type

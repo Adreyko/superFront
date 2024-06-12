@@ -6,15 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getAuthData, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { getAuthData } from 'entities/User';
 import Text from 'shared/ui/Text/Text';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import {
-  getIsUserAdmin,
-  getIsUserManager,
-} from 'entities/User/model/selectors/roleSelector';
+
+import HStack from 'shared/ui/Stack/HStack/HStack';
+import { NotificationButton } from 'features/NotificationButton';
+import { AvatarDropdown } from 'features/AvatarDropdown';
 
 interface NavbarProps {
   className?: string;
@@ -25,39 +24,22 @@ export const Navbar = ({ className }: NavbarProps) => {
   const [authModalOpened, setAuthModalOpened] = useState(false);
 
   const authData = useSelector(getAuthData);
-  const dispatch = useAppDispatch();
 
   const onToggleModal = useCallback(() => {
     setAuthModalOpened((prev) => !prev);
   }, []);
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-  }, [dispatch]);
-
-  const isAdmin = useSelector(getIsUserAdmin);
-  const isManager = useSelector(getIsUserManager);
-
-  const isAdminPanelAvailable = isAdmin || isManager;
-
   if (authData) {
     return (
-      <header className={clsx(cls.navbar, {}, [className])}>
-        <div className={cls.leftSide}>
-          <Text title='News app' />
-          <AppLink to={RouterPath.article_create} theme='secondary'>
-            Create article
-          </AppLink>
-          {isAdminPanelAvailable && (
-            <AppLink to={RouterPath.admin_panel} theme='secondary'>
-              Admin
-            </AppLink>
-          )}
-        </div>
-
-        <Button onClick={onLogout} className={cls.loginBtn} theme='primary'>
-          {t('logout')}
-        </Button>
+      <header className={clsx(cls.navbar, {}, [className ?? ''])}>
+        <Text text='Production application' className={cls.appName} />
+        <AppLink to={RouterPath.article_create} className={cls.createBtn}>
+          {t('createArticle')}
+        </AppLink>
+        <HStack gap='16' justify='end' className={cls.actions}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </header>
     );
   }

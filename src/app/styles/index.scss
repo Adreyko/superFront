@@ -15,7 +15,9 @@ body {
     font: var(--font-m);
 }
 
-.app {
+.app,
+.app_drawer,
+.app_modal {
     background: var(--bg-color);
     min-height: 100vh;
     color: var(--primary-color);

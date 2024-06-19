@@ -1,4 +1,3 @@
-import { useTheme } from './providers/ThemeProvider';
 import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
@@ -7,6 +6,7 @@ import { Suspense, useEffect } from 'react';
 import { PageLoader } from '@/widgets/PageLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { userActions } from '@/entities/User';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 const App = () => {
   const { theme } = useTheme();

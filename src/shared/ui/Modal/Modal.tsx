@@ -10,7 +10,7 @@ import {
   useCallback,
 } from 'react';
 import Portal from '../Portal/Portal';
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 export interface ModalProps {
   className?: string;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import AddCommentForm from './AddCommentForm';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof AddCommentForm> = {
   title: 'entities/AddCommentForm',

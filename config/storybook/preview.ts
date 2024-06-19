@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecoratro';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
+import { Theme } from '@/shared/const/theme';
 
 const preview: Preview = {
   parameters: {

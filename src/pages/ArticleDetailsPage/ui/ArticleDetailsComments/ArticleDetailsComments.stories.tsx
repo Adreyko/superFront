@@ -1,22 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ArticleDetailsComments  from './ArticleDetailsComments';
+import ArticleDetailsComments from './ArticleDetailsComments';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
+import { Theme } from '@/shared/const/theme';
 
-const meta: Meta<typeof ArticleDetailsComments > = {
+const meta: Meta<typeof ArticleDetailsComments> = {
   title: 'widgets/ArticleDetailsComments',
-  component: ArticleDetailsComments ,
-  decorators: []
-
+  component: ArticleDetailsComments,
+  decorators: [],
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleDetailsComments >;
-export const Light: Story = {
-};
+type Story = StoryObj<typeof ArticleDetailsComments>;
+export const Light: Story = {};
 
 export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
-
 };

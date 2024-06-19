@@ -1,6 +1,5 @@
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addNewComment';
-import { ArticleRecommendationList } from '@/features/articleRecommendationList';
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError,
@@ -41,7 +40,6 @@ export const ArticleDetailsComments = ({
   return (
     <VStack gap='16' max>
       <Text title='Commentaries' />
-      <ArticleRecommendationList />
       <AddCommentForm onSendComment={onCommentSend} />
       <CommentList isLoading={isLoading} comments={comments} error={error} />
     </VStack>

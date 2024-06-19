@@ -17,6 +17,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  config.resolve!.alias = {
+    ...config.resolve?.alias,
+    '@': paths.src,
+  };
+
   config?.module?.rules?.push({
     test: /\.s[ac]ss$/i,
     use: [

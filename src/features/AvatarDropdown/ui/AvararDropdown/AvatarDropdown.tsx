@@ -7,10 +7,11 @@ import {
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+
 import { clsx } from '@/shared/lib/helpers/clsx/clsx';
 import Avatar from '@/shared/ui/Avatar/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
+import { RouterPath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;

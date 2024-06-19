@@ -15,9 +15,10 @@ import { useHover } from '@/shared/lib/hooks/useHover';
 import Avatar from '@/shared/ui/Avatar/Avatar';
 import Button from '@/shared/ui/Button/Button';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+
 import AppLink from '@/shared/ui/AppLink/AppLink';
 import { HTMLAttributeAnchorTarget } from 'react';
+import { RouterPath } from '@/shared/const/router';
 
 interface ArticleListItemProps {
   className?: string;

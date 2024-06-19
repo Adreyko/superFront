@@ -13,6 +13,8 @@ import { ArticleDetailsReducers } from '@/pages/ArticleDetailsPage/model/slices'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import VStack from '@/shared/ui/Stack/VStack/VStack';
+import { ArticleRecommendationList } from '@/features/articleRecommendationList';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -37,6 +39,8 @@ export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack max gap='16'>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
+          <ArticleRecommendationList />
           <ArticleDetailsComments id={id} />
         </VStack>
       </Page>

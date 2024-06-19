@@ -9,11 +9,11 @@ import { useSelector } from 'react-redux';
 import { getAuthData } from '@/entities/User';
 import Text from '@/shared/ui/Text/Text';
 import AppLink from '@/shared/ui/AppLink/AppLink';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 
 import HStack from '@/shared/ui/Stack/HStack/HStack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { RouterPath } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;

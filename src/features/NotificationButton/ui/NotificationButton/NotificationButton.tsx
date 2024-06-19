@@ -10,7 +10,7 @@ import { AnimationProvider } from '@/shared/lib/componets/AnimationProvider/Anim
 import Button from '@/shared/ui/Button/Button';
 import Drawer from '@/shared/ui/Drawer/Drawer';
 import { Popover } from '@/shared/ui/Popups';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import Icon from '@/shared/ui/Icon/Icon';
 
 interface NotificationButtonProps {
   className?: string;

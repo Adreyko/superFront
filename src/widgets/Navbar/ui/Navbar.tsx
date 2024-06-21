@@ -13,7 +13,7 @@ import AppLink from '@/shared/ui/AppLink/AppLink';
 import HStack from '@/shared/ui/Stack/HStack/HStack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { RouterPath } from '@/shared/const/router';
+import { getRouteArticlesNew } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -33,7 +33,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     return (
       <header className={clsx(cls.navbar, {}, [className ?? ''])}>
         <Text text='Production application' className={cls.appName} />
-        <AppLink to={RouterPath.article_create} className={cls.createBtn}>
+        <AppLink to={getRouteArticlesNew()} className={cls.createBtn}>
           {t('createArticle')}
         </AppLink>
         <HStack gap='16' justify='end' className={cls.actions}>

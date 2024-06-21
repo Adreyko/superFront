@@ -72,7 +72,7 @@ const ProfileCard = ({
             <Avatar
               alt='avatar'
               src={data.avatar}
-              size='100px'
+              size={100}
               className={cls.image}
             />
           </div>

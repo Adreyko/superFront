@@ -18,7 +18,9 @@ import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextB
 
 import AppLink from '@/shared/ui/AppLink/AppLink';
 import { HTMLAttributeAnchorTarget } from 'react';
-import { RouterPath } from '@/shared/const/router';
+import { getRouteArticlesDetails } from '@/shared/const/router';
+import AppImage from '@/shared/ui/AppImage/AppImage';
+import Skeleton from '@/shared/ui/Skeleton/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -47,7 +49,7 @@ export const ArticleListItem = ({
   if (view === ArticleView.SMALL) {
     return (
       <AppLink
-        to={RouterPath.articles_details + article.id}
+        to={getRouteArticlesDetails(article.id)}
         target={target}
         {...bindHover}
         className={clsx(cls.articleListItem, {}, [className, cls[view]])}
@@ -81,7 +83,12 @@ export const ArticleListItem = ({
         </div>
         <Text text={article.title} className={cls.title} />
         {types}
-        <img src={article.img} className={cls.img} alt={article.title} />
+        <AppImage
+          fallback={<Skeleton width='200px' height='200px' />}
+          src={article.img}
+          className={cls.img}
+          alt={article.title}
+        />
         {textBlock && (
           <ArticleTextBlockComponent
             block={textBlock}
@@ -89,10 +96,7 @@ export const ArticleListItem = ({
           />
         )}
         <a className={cls.footer}>
-          <AppLink
-            to={RouterPath.articles_details + article.id}
-            target={target}
-          >
+          <AppLink to={getRouteArticlesDetails(article.id)} target={target}>
             <Button theme='outline'>Continue reading...</Button>
           </AppLink>
           {views}

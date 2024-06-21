@@ -20,7 +20,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import Card from '@/shared/ui/Card/Card';
 import Input from '@/shared/ui/Input/Input';
-import ArticleSortSelector from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import ArticleSortSelector from '@/features/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from '@/shared/types';
 import { fetchPageArticles } from '@/pages/ArticlePage/model/services/fetchPageArticles';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';

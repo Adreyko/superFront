@@ -14,7 +14,7 @@ export default function buildWebpackConfig(
     module: {
       rules: buildLoaders(isDev),
     },
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     resolve: buildResolvers(options),
     output: {
       filename: '[name].[contenthash].js',

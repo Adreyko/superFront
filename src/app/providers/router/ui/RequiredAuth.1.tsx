@@ -3,13 +3,12 @@ import { getIsMounted } from '@/entities/User/model/selectors/getIsMounted';
 import { getAllRoles } from '@/entities/User/model/selectors/roleSelector';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { RequiredAuthProps } from './RequiredAuth';
-import { RouterPath } from '@/shared/const/router';
+import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
 export const RequiredAuth = ({ children, roles }: RequiredAuthProps) => {
   const isAuth = useSelector(getAuthData);
-  const location = useLocation();
   const isMounted = useSelector(getIsMounted);
   const userRoles = useSelector(getAllRoles);
 
@@ -22,11 +21,11 @@ export const RequiredAuth = ({ children, roles }: RequiredAuthProps) => {
   }, [roles, userRoles]);
 
   if (!hasRequiredRoles) {
-    return <Navigate to={RouterPath.main} state={{ from: location }} replace />;
+    return <Navigate to={getRouteMain()} replace />;
   }
 
   if (!isAuth && isMounted) {
-    return <Navigate to={RouterPath.main} state={{ from: location }} replace />;
+    return <Navigate to={getRouteForbidden()} replace />;
   }
   return children;
 };

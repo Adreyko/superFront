@@ -22,6 +22,12 @@
     "generate:slice": "node ./scripts/createSlice/index.js",
     "removeFeature": "ts-node ./scripts/remove-feature.ts"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "eslint",
+      "prettier --list-different"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

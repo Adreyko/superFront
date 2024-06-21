@@ -4,4 +4,4 @@ export type { Article } from './model/types/article';
 export type { ArticleDetailsSchema };
 export * from './model/types/article';
 export * from './ui/ArticleList/ArticleList';
-export * from './ui/ArticleViewSelector/ArticleViewSelector';
+export * from '../../features/ArticleViewSelector/ArticleViewSelector';

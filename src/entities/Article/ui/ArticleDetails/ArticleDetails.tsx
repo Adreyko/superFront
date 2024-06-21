@@ -10,9 +10,9 @@ import { useCallback, useEffect } from 'react';
 import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import {
-  getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
+  useArticleDetailsData,
 } from '@/entities/Article/model/selectors/articleDatils';
 import Text from '@/shared/ui/Text/Text';
 import Skeleton from '@/shared/ui/Skeleton/Skeleton';
@@ -41,7 +41,7 @@ export const ArticleDetails = ({ className, id }: ArticleDetailsProps) => {
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const error = useSelector(getArticleDetailsError);
-  const data = useSelector(getArticleDetailsData);
+  const data = useArticleDetailsData();
 
   let content;
 

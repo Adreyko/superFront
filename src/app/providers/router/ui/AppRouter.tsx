@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
 import RequiredAuth from './RequiredAuth';
-import { AppRouterProps } from '@/shared/types/router';
 import { routeConfig } from '../config/routeConfig';
+import { RouteAppProps } from '@/shared/types/router';
 
 const AppRouter = () => {
-  const renderWithCallback = useCallback((router: AppRouterProps) => {
+  const renderWithCallback = useCallback((router: RouteAppProps) => {
     return (
       <Route
         key={router.path}

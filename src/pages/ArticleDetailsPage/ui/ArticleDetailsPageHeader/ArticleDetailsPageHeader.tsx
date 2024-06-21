@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { getCanEditArticle } from '@/pages/ArticleDetailsPage/model/selectors/article';
 import { useSelector } from 'react-redux';
-import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDatils';
 import { RouterPath } from '@/shared/const/router';
+import { useArticleDetailsData } from '@/entities/Article/model/selectors/articleDatils';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -24,7 +24,7 @@ export const ArticleDetailsPageHeader = ({
   }, [navigate]);
   const canEdit = useSelector(getCanEditArticle);
 
-  const articles = useSelector(getArticleDetailsData);
+  const articles = useArticleDetailsData();
 
   const onEditArticle = useCallback(() => {
     navigate(`${RouterPath.articles_details}${articles?.id}/edit`);
